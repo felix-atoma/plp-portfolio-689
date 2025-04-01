@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    name: "Alice Johnson",
-    role: "Project Manager, TechCorp",
+    name: "Nashma Malick",
+    role: "Project Innovator, Nashma",
     feedback:
       "An amazing frontend engineer! The UI/UX was flawless, and the performance of our platform improved drastically.",
     image: "https://via.placeholder.com/80",
@@ -17,15 +17,15 @@ const testimonials = [
     image: "https://via.placeholder.com/80",
   },
   {
-    name: "Sophia Martinez",
-    role: "Lead Developer, DevHub",
+    name: "Michael Hammond",
+    role: "Lead Instructor, Mest Africa",
     feedback:
       "Your attention to detail and passion for frontend development is truly inspiring. The best engineer we've worked with!",
     image: "https://via.placeholder.com/80",
   },
   {
-    name: "Liam Parker",
-    role: "CTO, NextGen Solutions",
+    name: "Kossi Adanou",
+    role: "CTO, ImmoAsk",
     feedback:
       "The responsiveness and animations were outstanding. Your skills in Next.js and JavaScript are top-notch!",
     image: "https://via.placeholder.com/80",

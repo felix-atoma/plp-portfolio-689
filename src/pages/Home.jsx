@@ -71,7 +71,7 @@ const Home = () => {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-2xl text-white font-bold">Phone</h3>
-            <p className="text-xl text-white font-semibold">+10 (67) 367-9034</p>
+            <p className="text-xl text-white font-semibold">+233 (24) 417-3068</p>
           </motion.div>
 
           {/* Email */}
@@ -84,7 +84,7 @@ const Home = () => {
             <h3 className="text-2xl text-white font-bold">Drop your Message</h3>
             <p className="text-xl text-white font-semibold flex items-center gap-2">
               <FaEnvelope className="text-white text-2xl" />
-              calvino90@gmail.com
+              felixatoma2@gmail.com
             </p>
           </motion.div>
         </div>
