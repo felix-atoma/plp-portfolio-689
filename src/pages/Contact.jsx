@@ -37,10 +37,10 @@ const Contact = () => {
   
             {/* Contact Details */}
             <div className="mt-6 space-y-4 text-lg text-gray-800">
-              <p><span className="font-semibold text-orange-500">📍 Location:</span> Lomé, Togo</p>
-              <p><span className="font-semibold text-orange-500">📧 Email:</span> your.email@example.com</p>
-              <p><span className="font-semibold text-orange-500">💼 LinkedIn:</span> linkedin.com/in/yourprofile</p>
-              <p><span className="font-semibold text-orange-500">🐙 GitHub:</span> github.com/yourusername</p>
+              <p><span className="font-semibold text-orange-500">📍 Location:</span> Accra, Ghana</p>
+              <p><span className="font-semibold text-orange-500">📧 Email:</span> felixatoma2@gmail.com</p>
+              <p><span className="font-semibold text-orange-500">💼 LinkedIn:</span> linkedin.com/in/felix-atoma</p>
+              <p><span className="font-semibold text-orange-500">🐙 GitHub:</span> github.com/felix-atoma</p>
             </div>
           </div>
   

@@ -6,7 +6,27 @@ const Services = () => {
   const navigate = useNavigate(); // ✅ Initialize navigate
 
   return (
-    <section id="services" className="text-center py-16 bg-orange-500">
+    <div>
+     <section className="w-full bg-gray-100 py-24 px-8 md:px-20 min-h-[60vh] flex items-start">
+        <div className="max-w-6xl w-full">
+          {/* Breadcrumb Navigation - Aligned to Top Left */}
+          <div className="text-gray-600 text-lg">
+            <span className="text-red-500 font-semibold">Home</span> / My Services
+          </div>
+
+          {/* About Me Title - Bigger Size */}
+          <h2 className="text-7xl font-extrabold text-gray-900 mt-2 relative inline-block">
+            Services
+            <span className="absolute left-0 -bottom-2 w-24 h-1 bg-red-500"></span>
+          </h2>
+        </div>
+      </section>
+
+
+
+
+
+    <section id="services" className="text-center py-16 bg-orange-100">
       {/* Section Header */}
       <h2 className="text-5xl font-bold text-white mb-8">Services</h2>
 
@@ -95,6 +115,14 @@ const Services = () => {
         </button>
       </div>
     </section>
+
+
+
+
+
+
+
+    </div>
   );
 };
 
