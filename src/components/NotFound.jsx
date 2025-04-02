@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-// import notFoundImage from "/404.webp"; // Replace with the correct path
+import notFoundImage from "/404.webp"; 
 
 const NotFound = () => {
   return (

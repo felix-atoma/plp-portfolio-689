@@ -8,7 +8,11 @@ const skills = [
   { name: "TypeScript", percentage: 75, color: "bg-orange-600" },
   { name: "Python", percentage: 70, color: "bg-orange-500" },
   { name: "Tailwind CSS", percentage: 90, color: "bg-orange-800" },
-  { name: "UI/UX Design", percentage: 85, color: "bg-orange-600" }
+  { name: "UI/UX Design", percentage: 85, color: "bg-orange-600" },
+  { name: "SQL", percentage: 80, color: "bg-orange-700" },
+  { name: "MongoDB", percentage: 75, color: "bg-orange-600" },
+  { name: "Node.js", percentage: 85, color: "bg-orange-700" },
+  { name: "Express.js", percentage: 80, color: "bg-orange-600" }
 ];
 
 const AboutMe = () => {

@@ -3,17 +3,16 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/f
 
 const Footer = () => {
   return (
-    <footer id="footer" className="bg-gray-900 text-white py-10 text-center">
-      <div className="max-w-5xl mx-auto">
-
+    <footer id="footer" className="bg-gray-900 text-white py-10 text-center px-6">
+      <div className="max-w-5xl mx-auto flex flex-col items-center">
+        
         {/* Logo */}
         <div className="text-2xl font-bold text-white mb-4">
-          {/* This is the Felixio brand logo */}
           Felixio<span className="text-yellow-400">.</span>
         </div>
 
         {/* Navigation Links */}
-        <ul className="flex justify-center gap-6 mb-6">
+        <ul className="flex flex-wrap justify-center gap-6 mb-6 text-lg">
           {["Home", "Work", "Services", "Contact"].map((item, index) => (
             <motion.li
               key={item}
@@ -21,7 +20,7 @@ const Footer = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index, duration: 0.5 }}
             >
-              <a href={`#${item.toLowerCase()}`} className="text-white hover:text-blue-500 text-lg">
+              <a href={`#${item.toLowerCase()}`} className="text-white hover:text-blue-500">
                 {item}
               </a>
             </motion.li>
@@ -29,7 +28,7 @@ const Footer = () => {
         </ul>
 
         {/* Buttons */}
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4 w-full">
           <motion.a
             href="#lets-talk"
             className="bg-yellow-500 text-white py-2 px-6 rounded-full text-lg font-semibold transition hover:bg-yellow-600"
@@ -48,7 +47,7 @@ const Footer = () => {
         </div>
 
         {/* Social Media Links */}
-        <div className="flex justify-center gap-6 mt-6">
+        <div className="flex flex-wrap justify-center gap-6 mt-6">
           {[FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram].map((Icon, index) => (
             <motion.a
               key={index}
@@ -64,10 +63,10 @@ const Footer = () => {
         </div>
 
         {/* Copyright Text */}
-        <p className="mt-6 text-sm text-gray-400">
-          &copy; 2025 All rights reserved | This template is made with ❤️ by <a href="https://frlixio.com" className="text-yellow-400 hover:underline">Felixio</a>
+        <p className="mt-6 text-sm text-gray-400 text-center">
+          &copy; 2025 All rights reserved | This template is made with ❤️ by 
+          <a href="https://frlixio.com" className="text-yellow-400 hover:underline"> Felixio</a>
         </p>
-
       </div>
     </footer>
   );
