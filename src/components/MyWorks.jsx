@@ -38,7 +38,7 @@ const MyWorks = () => {
         {/* Work Card 3 */}
         <div className="relative overflow-hidden rounded-lg shadow-lg group">
           <img
-            src="/ecomerce2.png"
+            src="/ecommerce2.png"
             alt="Work 3"
             className="w-full h-full object-cover transition duration-300 transform group-hover:scale-105"
           />
@@ -50,7 +50,7 @@ const MyWorks = () => {
         {/* Work Card 4 */}
         <div className="relative overflow-hidden rounded-lg shadow-lg group">
           <img
-            src="/dashboard.png"
+            src="/dashboard2.png"
             alt="Work 4"
             className="w-full h-full object-cover transition duration-300 transform group-hover:scale-105"
           />
@@ -62,7 +62,7 @@ const MyWorks = () => {
         {/* Work Card 5 */}
         <div className="relative overflow-hidden rounded-lg shadow-lg group">
           <img
-            src="/brand.png"
+            src="/felixio.png"
             alt="Work 5"
             className="w-full h-full object-cover transition duration-300 transform group-hover:scale-105"
           />
@@ -74,7 +74,7 @@ const MyWorks = () => {
         {/* Work Card 6 */}
         <div className="relative overflow-hidden rounded-lg shadow-lg group">
           <img
-            src="/ux.png"
+            src="/ux1.png"
             alt="Work 6"
             className="w-full h-full object-cover transition duration-300 transform group-hover:scale-105"
           />

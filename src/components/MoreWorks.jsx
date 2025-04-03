@@ -2,16 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const moreWorksData = [
-  { id: 1, title: "Portfolio Website", img: "/port.png" },
-  { id: 2, title: "E-learning Platform", img: "/images/work8.jpg" },
-  { id: 3, title: "Health App UI", img: "/images/work9.jpg" },
-  { id: 4, title: "Fintech Dashboard", img: "/images/work10.jpg" },
-  { id: 5, title: "Restaurant Booking", img: "/images/work11.jpg" },
-  { id: 6, title: "Event Management", img: "/images/work12.jpg" },
-  { id: 7, title: "SaaS Landing Page", img: "/images/work13.jpg" },
-  { id: 8, title: "News Website", img: "/images/work14.jpg" },
-  { id: 9, title: "AI Chatbot UI", img: "/images/work15.jpg" },
-  { id: 10, title: "NFT Marketplace", img: "/images/work16.jpg" },
+  { id: 1, title: "Portfolio Website", img: "/p2.png" },
+  { id: 2, title: "E-learning Platform", img: "/elerarn.png" },
+  { id: 3, title: "Health App UI", img: "/health.png" },
+  { id: 4, title: "Fintech Dashboard", img: "/fintech.png" },
+  { id: 5, title: "Restaurant Booking", img: "/restaurant.png" },
+  { id: 6, title: "Event Management", img: "/event2.png" },
+  { id: 7, title: "SaaS Landing Page", img: "/saas.png" },
+  { id: 8, title: "News Website", img: "/news.png" },
+  { id: 9, title: "AI Chatbot UI", img: "/chat.png" },
+  { id: 10, title: "NFT Marketplace", img: "/nt.png" },
 ];
 
 const MoreWorks = () => {

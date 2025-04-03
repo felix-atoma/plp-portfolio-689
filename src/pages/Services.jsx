@@ -25,12 +25,12 @@ const Services = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {[
-            { title: "Website Redesign", img: "/images/work1.jpg" },
-            { title: "Mobile App UI", img: "/images/work2.jpg" },
-            { title: "E-commerce Platform", img: "/images/work3.jpg" },
-            { title: "Dashboard Design", img: "/images/work4.jpg" },
-            { title: "Brand Identity", img: "/images/work5.jpg" },
-            { title: "UX Research", img: "/images/work6.jpg" }
+            { title: "Website Redesign", img: "/web.png" },
+            { title: "Mobile App UI", img: "/mobile.png" },
+            { title: "E-commerce Platform", img: "/ecommerce2.png" },
+            { title: "Dashboard Design", img: "/dashboard2.png" },
+            { title: "Brand Identity", img: "/felixio.png" },
+            { title: "UX Research", img: "/ux1.png" }
           ].map((work, index) => (
             <div key={index} className="relative overflow-hidden rounded-lg shadow-lg group">
               <img
