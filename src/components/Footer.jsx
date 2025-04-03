@@ -38,7 +38,7 @@ const Footer = () => {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto text-center">
           <motion.a
-            href="#contact"
+            href="contact"
             className="bg-yellow-500 text-white py-2 px-6 rounded-full text-base font-semibold transition hover:bg-yellow-600"
             whileHover={{ scale: 1.05 }}
           >
