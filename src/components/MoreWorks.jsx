@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const moreWorksData = [
-  { id: 1, title: "Portfolio Website", img: "/images/work7.jpg" },
+  { id: 1, title: "Portfolio Website", img: "/port.png" },
   { id: 2, title: "E-learning Platform", img: "/images/work8.jpg" },
   { id: 3, title: "Health App UI", img: "/images/work9.jpg" },
   { id: 4, title: "Fintech Dashboard", img: "/images/work10.jpg" },

@@ -20,7 +20,7 @@ const Home = () => {
           transition={{ duration: 0.8 }}
         >
           <img
-            src="/images/profile.jpg"
+            src="/Image1.jpg"
             alt="Felix"
             className="w-40 h-40 md:w-64 md:h-64 rounded-full object-cover border-4 border-white shadow-lg"
           />

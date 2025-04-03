@@ -30,14 +30,14 @@ const Footer = () => {
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-4 w-full">
           <motion.a
-            href="#lets-talk"
+            href="contact"
             className="bg-yellow-500 text-white py-2 px-6 rounded-full text-lg font-semibold transition hover:bg-yellow-600"
             whileHover={{ scale: 1.05 }}
           >
             Let's Talk
           </motion.a>
           <motion.a
-            href="path/to/your/cv.pdf"
+            href="/Felix Atoma (3).pdf"
             download
             className="bg-gray-900 border-2 border-white text-white py-2 px-6 rounded-full text-lg font-semibold transition hover:bg-white hover:text-gray-900"
             whileHover={{ scale: 1.05 }}

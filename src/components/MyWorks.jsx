@@ -14,7 +14,7 @@ const MyWorks = () => {
         {/* Work Card 1 */}
         <div className="relative overflow-hidden rounded-lg shadow-lg group">
           <img
-            src="/images/work1.jpg"
+            src="/web.png"
             alt="Work 1"
             className="w-full h-full object-cover transition duration-300 transform group-hover:scale-105"
           />
@@ -26,7 +26,7 @@ const MyWorks = () => {
         {/* Work Card 2 */}
         <div className="relative overflow-hidden rounded-lg shadow-lg group">
           <img
-            src="/images/work2.jpg"
+            src="/mobile.png"
             alt="Work 2"
             className="w-full h-full object-cover transition duration-300 transform group-hover:scale-105"
           />
@@ -38,7 +38,7 @@ const MyWorks = () => {
         {/* Work Card 3 */}
         <div className="relative overflow-hidden rounded-lg shadow-lg group">
           <img
-            src="/images/work3.jpg"
+            src="/ecomerce2.png"
             alt="Work 3"
             className="w-full h-full object-cover transition duration-300 transform group-hover:scale-105"
           />
@@ -50,7 +50,7 @@ const MyWorks = () => {
         {/* Work Card 4 */}
         <div className="relative overflow-hidden rounded-lg shadow-lg group">
           <img
-            src="/images/work4.jpg"
+            src="/dashboard.png"
             alt="Work 4"
             className="w-full h-full object-cover transition duration-300 transform group-hover:scale-105"
           />
@@ -62,7 +62,7 @@ const MyWorks = () => {
         {/* Work Card 5 */}
         <div className="relative overflow-hidden rounded-lg shadow-lg group">
           <img
-            src="/images/work5.jpg"
+            src="/brand.png"
             alt="Work 5"
             className="w-full h-full object-cover transition duration-300 transform group-hover:scale-105"
           />
@@ -74,7 +74,7 @@ const MyWorks = () => {
         {/* Work Card 6 */}
         <div className="relative overflow-hidden rounded-lg shadow-lg group">
           <img
-            src="/images/work6.jpg"
+            src="/ux.png"
             alt="Work 6"
             className="w-full h-full object-cover transition duration-300 transform group-hover:scale-105"
           />
