@@ -40,37 +40,37 @@ const Contact = () => {
 
   return (
     <>
-      <section className="w-full bg-gray-100 py-16 px-4 md:px-20 min-h-[50vh] flex items-start">
+      <section className="w-full bg-gradient-to-r from-orange-100 via-orange-50 to-orange-100 py-16 px-4 md:px-20 min-h-[50vh] flex items-start">
         <div className="max-w-6xl w-full">
           <div className="text-gray-600 text-base md:text-lg">
-            <span className="text-orange-500 font-semibold">Home</span> / Contact
+            <span className="text-orange-600 font-semibold">Home</span> / Contact
           </div>
           <h2 className="text-5xl md:text-7xl font-extrabold text-gray-900 mt-2 relative inline-block">
             Get in Touch
-            <span className="absolute left-0 -bottom-2 w-16 md:w-24 h-1 bg-orange-500"></span>
+            <span className="absolute left-0 -bottom-2 w-16 md:w-24 h-1 bg-orange-600"></span>
           </h2>
         </div>
       </section>
 
-      <div className="w-full bg-gray-100 py-12 px-4 md:px-20 flex flex-col md:flex-row items-center gap-12">
+      <div className="w-full bg-orange-50 py-12 px-4 md:px-20 flex flex-col md:flex-row items-center gap-12">
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Let's Build Something Great Together!
           </h2>
           <p className="text-gray-700 mt-4 text-base md:text-lg">
-            As a Frontend Engineer specializing in <span className="font-semibold text-orange-500">React.js, Next.js, JavaScript, and UI/UX design</span>, I craft seamless and visually appealing digital experiences.
+            As a Frontend Engineer specializing in <span className="font-semibold text-orange-600">React.js, Next.js, JavaScript, and UI/UX design</span>, I craft seamless and visually appealing digital experiences.
           </p>
           <div className="mt-6 space-y-3 text-base md:text-lg text-gray-800">
-            <p><span className="font-semibold text-orange-500">📍 Location:</span> Accra, Ghana</p>
-            <p><span className="font-semibold text-orange-500">📧 Email:</span> felixatoma2@gmail.com</p>
+            <p><span className="font-semibold text-orange-600">📍 Location:</span> Accra, Ghana</p>
+            <p><span className="font-semibold text-orange-600">📧 Email:</span> felixatoma2@gmail.com</p>
           </div>
         </div>
 
-        <div className="w-full md:w-1/2 bg-white p-6 md:p-8 shadow-md rounded-lg">
+        <div className="w-full md:w-1/2 bg-white p-6 md:p-8 shadow-md rounded-lg border-t-4 border-orange-600">
           <h3 className="text-2xl font-semibold text-gray-900 mb-4 text-center md:text-left">Send Me a Message</h3>
 
-          {successMessage && <p className="text-green-500">{successMessage}</p>}
-          {error && <p className="text-red-500">{error}</p>}
+          {successMessage && <p className="text-green-500 font-medium mb-2">{successMessage}</p>}
+          {error && <p className="text-red-500 font-medium mb-2">{error}</p>}
 
           <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             <input
@@ -79,7 +79,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               placeholder="Enter your name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-600"
               required
             />
 
@@ -89,7 +89,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter your email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-600"
               required
             />
 
@@ -99,14 +99,14 @@ const Contact = () => {
               onChange={handleChange}
               rows="4"
               placeholder="Tell me about your project..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-600"
               required
             />
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full md:w-auto flex items-center justify-center text-white text-lg font-semibold px-6 py-3 rounded-md shadow-md bg-orange-500 transition duration-300 hover:bg-orange-600"
+              className="w-full md:w-auto flex items-center justify-center text-white text-lg font-semibold px-6 py-3 rounded-md shadow-md bg-orange-600 transition duration-300 hover:bg-orange-700"
             >
               {loading ? (
                 <motion.div
