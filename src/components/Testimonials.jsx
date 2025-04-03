@@ -3,32 +3,32 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    name: "Nashma Malick",
-    role: "Project Innovator, Nashma",
+    name: "Aisha Mensah",
+    role: "Product Manager, TechWave Ghana",
     feedback:
-      "An amazing frontend engineer! The UI/UX was flawless, and the performance of our platform improved drastically.",
-    image: "https://via.placeholder.com/80",
+      "Felix brought our design vision to life! His attention to responsive design and user-friendly layouts is impressive.",
+    image: "https://randomuser.me/api/portraits/women/65.jpg", // African woman
   },
   {
-    name: "David Kim",
-    role: "CEO, InnovateX",
+    name: "Kwame Boateng",
+    role: "CEO, Accra Digital",
     feedback:
-      "Working with you was a game-changer! Your expertise in React and Tailwind CSS brought our vision to life.",
-    image: "https://via.placeholder.com/80",
+      "Professional, detail-oriented, and creative! Felix delivered a modern frontend that truly speaks to Ghana’s tech future.",
+    image: "https://randomuser.me/api/portraits/men/76.jpg", // African man
   },
   {
-    name: "Michael Hammond",
-    role: "Lead Instructor, Mest Africa",
+    name: "Efua Serwaa",
+    role: "Lead Designer, AfroTech",
     feedback:
-      "Your attention to detail and passion for frontend development is truly inspiring. The best engineer we've worked with!",
-    image: "https://via.placeholder.com/80",
+      "Collaborating with Felix was seamless. His Tailwind and React skills made our mobile-first project smooth and delightful.",
+    image: "https://randomuser.me/api/portraits/women/64.jpg", // African woman
   },
   {
-    name: "Kossi Adanou",
-    role: "CTO, ImmoAsk",
+    name: "Kweku Danso",
+    role: "CTO, Kumasi Startups",
     feedback:
-      "The responsiveness and animations were outstanding. Your skills in Next.js and JavaScript are top-notch!",
-    image: "https://via.placeholder.com/80",
+      "Clean code, interactive UI, and performance optimization all in one! Felix is a frontend powerhouse!",
+    image: "https://randomuser.me/api/portraits/men/64.jpg", // African man
   },
 ];
 
@@ -44,43 +44,50 @@ export default function TestimonialCarousel() {
   };
 
   return (
-    <div className="bg-gray-100 py-16 px-4 text-center">
-      <h2 className="text-3xl font-bold text-gray-900 mb-6">Client Testimonials</h2>
-      <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-        Hear from professionals who have worked with me on frontend development projects.
+    <div className="bg-gradient-to-b from-orange-100 to-white py-16 px-4 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        What Clients Say
+      </h2>
+      <p className="text-gray-600 mb-10 max-w-xl mx-auto">
+        Here’s what some of my clients and collaborators from Ghana's tech space
+        have shared about working with me.
       </p>
-      <div className="relative w-full max-w-xl mx-auto">
+
+      <div className="relative w-full max-w-2xl mx-auto">
         <motion.div
           key={current}
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.5 }}
-          className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center"
+          className="bg-white shadow-xl rounded-2xl p-8 flex flex-col items-center"
         >
           <img
             src={testimonials[current].image}
             alt={testimonials[current].name}
-            className="w-20 h-20 rounded-full mb-4 object-cover"
+            className="w-24 h-24 rounded-full mb-4 object-cover border-4 border-orange-300"
           />
-          <p className="text-gray-700 italic mb-4">"{testimonials[current].feedback}"</p>
-          <h4 className="font-semibold text-lg text-gray-900">
+          <p className="text-gray-700 italic mb-4 text-lg">
+            “{testimonials[current].feedback}”
+          </p>
+          <h4 className="font-semibold text-xl text-gray-900">
             {testimonials[current].name}
           </h4>
-          <p className="text-sm text-gray-500">{testimonials[current].role}</p>
+          <p className="text-sm text-orange-600 mt-1">{testimonials[current].role}</p>
         </motion.div>
-        <div className="flex justify-between mt-4">
+
+        <div className="flex justify-center mt-6 gap-4">
           <button
             onClick={prevSlide}
-            className="px-4 py-2 bg-orange-300 text-white rounded-lg hover:bg-orange-400"
+            className="px-4 py-2 bg-orange-400 text-white font-medium rounded-full shadow hover:bg-orange-500 transition"
           >
-            Prev
+            ← Prev
           </button>
           <button
             onClick={nextSlide}
-            className="px-4 py-2 bg-orange-300 text-white rounded-lg hover:bg-orange-400"
+            className="px-4 py-2 bg-orange-400 text-white font-medium rounded-full shadow hover:bg-orange-500 transition"
           >
-            Next
+            Next →
           </button>
         </div>
       </div>

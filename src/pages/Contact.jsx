@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { motion } from 'framer-motion';
+
+const spinnerVariants = {
+  animate: { rotate: 360 },
+};
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -7,16 +12,13 @@ const Contact = () => {
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted");
 
     setLoading(true);
     setError('');
@@ -24,14 +26,12 @@ const Contact = () => {
 
     try {
       const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/contact`, formData);
-      console.log("Response:", response);
 
       if (response.data.success) {
         setSuccessMessage('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
       }
     } catch (error) {
-      console.error("Error:", error);
       setError('An error occurred while sending the message. Please try again.');
     } finally {
       setLoading(false);
@@ -68,64 +68,56 @@ const Contact = () => {
 
         <div className="w-full md:w-1/2 bg-white p-6 md:p-8 shadow-md rounded-lg">
           <h3 className="text-2xl font-semibold text-gray-900 mb-4 text-center md:text-left">Send Me a Message</h3>
-          
+
           {successMessage && <p className="text-green-500">{successMessage}</p>}
           {error && <p className="text-red-500">{error}</p>}
 
           <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-            <div>
-              <label className="block text-base md:text-lg font-medium text-gray-700">Your Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Enter your name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
-                required
-              />
-            </div>
-            
-            <div>
-              <label className="block text-base md:text-lg font-medium text-gray-700">Your Email</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Enter your email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
-                required
-              />
-            </div>
-            
-            <div>
-              <label className="block text-base md:text-lg font-medium text-gray-700">Message</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows="4"
-                placeholder="Tell me about your project..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
-                required
-              />
-            </div>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter your name"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
+              required
+            />
+
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter your email"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
+              required
+            />
+
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              rows="4"
+              placeholder="Tell me about your project..."
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
+              required
+            />
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full md:w-auto flex items-center justify-center text-white text-lg font-semibold px-6 py-3 rounded-md shadow-md bg-orange-500 transition-all duration-500 hover:bg-orange-600"
+              className="w-full md:w-auto flex items-center justify-center text-white text-lg font-semibold px-6 py-3 rounded-md shadow-md bg-orange-500 transition duration-300 hover:bg-orange-600"
             >
               {loading ? (
-                <>
-                  <svg className="animate-spin h-5 w-5 mr-3 text-white" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
-                  </svg>
-                  Sending...
-                </>
-              ) : "Send Message"}
+                <motion.div
+                  variants={spinnerVariants}
+                  animate="animate"
+                  transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
+                  className="border-4 border-t-transparent border-white rounded-full w-6 h-6"
+                />
+              ) : (
+                "Send Message"
+              )}
             </button>
           </form>
         </div>
