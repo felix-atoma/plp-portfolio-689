@@ -12,14 +12,14 @@ const Footer = () => {
   return (
     <footer id="footer" className="bg-gray-900 text-white py-10 px-6 relative">
       <div className="max-w-7xl mx-auto flex flex-col items-center space-y-8">
-        {/* Logo */}
-        <div className="text-3xl font-extrabold text-white">
-          Felixio<span className="text-yellow-400">.</span>
+        {/* Logo Image */}
+        <div className="flex items-center justify-center">
+          <img src="/logo.png" alt="Felixio Logo" className="h-12 w-12 rounded-full object-cover" />
         </div>
 
         {/* Navigation Links */}
         <ul className="flex flex-wrap justify-center gap-4 text-base sm:text-lg text-center">
-          {["Home", "Work", "Services", "Contact"].map((item, index) => (
+          {"Home,Work,Services,Contact".split(",").map((item, index) => (
             <motion.li
               key={item}
               initial={{ opacity: 0, y: -10 }}
@@ -27,7 +27,7 @@ const Footer = () => {
               transition={{ delay: 0.1 * index, duration: 0.5 }}
             >
               <a
-                href={`#${item.toLowerCase()}`}
+                href={`${item.toLowerCase()}`}
                 className="text-white hover:text-yellow-400 transition"
               >
                 {item}
@@ -39,7 +39,7 @@ const Footer = () => {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto text-center">
           <motion.a
-            href="#contact"
+            href="contact"
             className="bg-yellow-500 text-white py-2 px-6 rounded-full text-base font-semibold transition hover:bg-yellow-600"
             whileHover={{ scale: 1.05 }}
           >
