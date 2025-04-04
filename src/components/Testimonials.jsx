@@ -3,31 +3,31 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
-    name: "Aisha Mensah",
-    role: "Product Manager, TechWave Ghana",
+    name: "Linda Dzifa",
+    role: "Founder, Nashma Agribusiness",
     feedback:
-      "Felix brought our design vision to life! His attention to responsive design and user-friendly layouts is impressive.",
+      "Felix transformed our ideas into a clean, intuitive web experience. His UX decisions significantly improved user engagement.",
     image: "/aisha.png",
   },
   {
     name: "Kwame Boateng",
-    role: "CEO, Accra Digital",
+    role: "CEO, United Intellects",
     feedback:
-      "Professional, detail-oriented, and creative! Felix delivered a modern frontend that truly speaks to Ghana’s tech future.",
+      "Professional, detail-oriented, and creative! Felix brought our vision to life with impactful design and smooth functionality.",
     image: "/kwame.png",
   },
   {
     name: "Efua Serwaa",
-    role: "Lead Designer, AfroTech",
+    role: "UI Consultant, ImmoAsk",
     feedback:
-      "Collaborating with Felix was seamless. His Tailwind and React skills made our mobile-first project smooth and delightful.",
+      "Felix’s Tailwind and React skills were essential in launching our mobile-first rental platform. A true team player.",
     image: "/Afua.png",
   },
   {
     name: "Kweku Danso",
-    role: "CTO, Kumasi Startups",
+    role: "CTO, Agence Immobilière Togo",
     feedback:
-      "Clean code, interactive UI, and performance optimization all in one! Felix is a frontend powerhouse!",
+      "Felix implemented responsive layouts and API integration that enhanced performance. His work ethic is top-notch!",
     image: "/kwaku.png",
   },
 ];
@@ -35,7 +35,6 @@ const testimonials = [
 export default function TestimonialCarousel() {
   const [current, setCurrent] = useState(0);
 
-  // Auto-slide every 6 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
@@ -78,7 +77,6 @@ export default function TestimonialCarousel() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Thumbnails */}
         <div className="flex justify-center mt-6 gap-3 flex-wrap">
           {testimonials.map((item, index) => (
             <button key={index} onClick={() => setCurrent(index)}>
