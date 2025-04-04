@@ -4,13 +4,14 @@ import {
   FaTwitter,
   FaLinkedinIn,
   FaInstagram,
+  FaArrowUp,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="bg-gray-900 text-white py-10 px-6">
+    <footer id="footer" className="bg-gray-900 text-white py-10 px-6 relative">
       <div className="max-w-7xl mx-auto flex flex-col items-center space-y-8">
-
         {/* Logo */}
         <div className="text-3xl font-extrabold text-white">
           Felixio<span className="text-yellow-400">.</span>
@@ -38,7 +39,7 @@ const Footer = () => {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto text-center">
           <motion.a
-            href="contact"
+            href="#contact"
             className="bg-yellow-500 text-white py-2 px-6 rounded-full text-base font-semibold transition hover:bg-yellow-600"
             whileHover={{ scale: 1.05 }}
           >
@@ -56,23 +57,40 @@ const Footer = () => {
 
         {/* Social Media Links */}
         <div className="flex justify-center gap-6 text-2xl">
-          {[FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram].map((Icon, index) => (
-            <motion.a
-              key={index}
-              href="#"
-              className="text-white hover:text-yellow-400 transition"
-              whileHover={{ scale: 1.1 }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon />
-            </motion.a>
-          ))}
+          <motion.a
+            href="https://www.facebook.com/home.php"
+            className="text-white hover:text-yellow-400 transition"
+            whileHover={{ scale: 1.1 }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebookF />
+          </motion.a>
+
+          <motion.a
+            href="https://linkedin.com/in/felix-atoma-714abb269"
+            className="text-white hover:text-yellow-400 transition"
+            whileHover={{ scale: 1.1 }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedinIn />
+          </motion.a>
+
+          <motion.a
+            href="https://wa.me/233244173068"
+            className="text-white hover:text-yellow-400 transition"
+            whileHover={{ scale: 1.1 }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaWhatsapp />
+          </motion.a>
         </div>
 
         {/* Footer Bottom Text */}
         <p className="text-sm text-gray-400 text-center px-4">
-          &copy; 2025 All rights reserved | Made with ❤️ by{" "}
+          &copy; 2025 All rights reserved | Made with ❤️ by {" "}
           <a
             href="https://frlixio.com"
             className="text-yellow-400 hover:underline"
@@ -81,6 +99,16 @@ const Footer = () => {
           </a>
         </p>
       </div>
+
+      {/* Scroll to Top Button */}
+      <motion.button
+        className="fixed bottom-6 right-6 bg-yellow-500 hover:bg-yellow-600 text-white p-3 rounded-full shadow-lg transition z-50"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        whileHover={{ scale: 1.1 }}
+        aria-label="Scroll to Top"
+      >
+        <FaArrowUp />
+      </motion.button>
     </footer>
   );
 };

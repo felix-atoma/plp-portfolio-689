@@ -86,7 +86,8 @@ const MyWorks = () => {
 
       {/* More Work Button */}
       <div className="mt-12">
-        <button   onClick={() => navigate("more-works")} className="bg-gray-900 border-2 border-white text-white py-2 px-6 rounded-full text-lg font-semibold transition hover:bg-white hover:text-gray-900">
+        <button   onClick={() => navigate("more-works")} className="px-6 py-3 text-white bg-[#F7931E] hover:bg-[#e07e12] font-semibold text-lg rounded-full transition duration-300 shadow-lg"
+        >
           More Work
         </button>
       </div>

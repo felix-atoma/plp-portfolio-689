@@ -39,7 +39,8 @@ const MoreWorks = () => {
       <div className="mt-12">
         <Link
           to="/"
-          className="px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 font-semibold text-lg rounded-full transition duration-300 shadow-lg"
+          className="px-6 py-3 text-white bg-[#F7931E] hover:bg-[#e07e12] font-semibold text-lg rounded-full transition duration-300 shadow-lg"
+
         >
           Back to Home
         </Link>

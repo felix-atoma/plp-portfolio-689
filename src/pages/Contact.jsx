@@ -66,13 +66,20 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-1/2 bg-white p-6 md:p-8 shadow-md rounded-lg border-t-4 border-orange-600">
+        <div className="w-full md:w-1/2 bg-white p-6 md:p-8 shadow-md rounded-lg border-t-4 border-orange-600 flex flex-col items-center">
+          {/* Cartoon Image */}
+          <img
+            src="/cartoon.png"
+            alt="Cartoon illustration"
+            className="w-32 h-32 object-contain mb-4"
+          />
+
           <h3 className="text-2xl font-semibold text-gray-900 mb-4 text-center md:text-left">Send Me a Message</h3>
 
           {successMessage && <p className="text-green-500 font-medium mb-2">{successMessage}</p>}
           {error && <p className="text-red-500 font-medium mb-2">{error}</p>}
 
-          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 w-full">
             <input
               type="text"
               name="name"
