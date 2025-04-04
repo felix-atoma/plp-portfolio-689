@@ -8,6 +8,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import NotFound from "./components/NotFound";
 import Loader from "./components/Loader"; // ✅ Import the spinner loader
+import PortfolioAssistant from "./components/PortfolioAssistant"; // ✅ Import the assistant
 
 // ✅ Your router setup
 const router = createBrowserRouter([
@@ -34,7 +35,14 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  return loading ? <Loader onFinish={() => setLoading(false)} /> : <RouterProvider router={router} />;
+  return loading ? (
+    <Loader onFinish={() => setLoading(false)} />
+  ) : (
+    <>
+      <RouterProvider router={router} />
+      <PortfolioAssistant />
+    </>
+  );
 }
 
 export default App;
