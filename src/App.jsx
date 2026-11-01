@@ -8,7 +8,6 @@ import Contact from "./pages/Contact";
 import NotFound from "./components/NotFound";
 import NovaBulletinRedirect from "./components/NovaBulletinRedirect";
 import Loader from "./components/Loader"; // ✅ Import the spinner loader
-import PortfolioAssistant from "./components/PortfolioAssistant"; // ✅ Import the assistant
 
 // ✅ Your router setup
 const router = createBrowserRouter([
@@ -40,7 +39,6 @@ function App() {
   ) : (
     <>
       <RouterProvider router={router} />
-      <PortfolioAssistant />
     </>
   );
 }
