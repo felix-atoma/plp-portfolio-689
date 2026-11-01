@@ -1,9 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 const Services = () => {
-  const navigate = useNavigate();
-
   return (
     <div>
       {/* Hero Section */}
@@ -45,14 +42,16 @@ const Services = () => {
           ))}
         </div>
 
-        {/* More Work Button */}
+        {/* See My Work Button */}
         <div className="mt-12">
-          <button
-            onClick={() => navigate("/more-works")}
+          <a
+            href="https://e-report-frontend.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-gray-900 border-2 border-white text-white py-2 px-6 rounded-full text-lg font-semibold transition hover:bg-white hover:text-gray-900"
           >
-            More Work
-          </button>
+            See My Work
+          </a>
         </div>
       </section>
     </div>

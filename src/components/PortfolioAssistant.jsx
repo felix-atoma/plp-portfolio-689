@@ -5,7 +5,7 @@ import { FaRobot, FaTimes, FaUndo } from "react-icons/fa";
 const assistantResponses = {
   skills: "Absolutely! Felixio is highly skilled in React, React Native, FlutterFlow, UI/UX Design, Tailwind CSS, and the entire MERN stack. He builds responsive and modern web and mobile apps.",
   experience: "Of course! Felixio has worked with brands like Nashma Agribusiness, United Intellects, and collaborated on projects such as ImmoAsk and Agence Immobilière in Togo. He also has teaching and translation experience.",
-  projects: "Glad you asked! Some of Felixio’s notable projects include Trackor (a productivity tracker), FarmConnect Ghana (a farmers' marketplace), and clean websites like Ecole St Pierre Claver and N Media.",
+  projects: "Glad you asked! Felixio’s featured project is NovaBulletin, a school management platform for West African schools: automatic grade averages, one-click PDF report cards, WhatsApp and SMS alerts to parents, fee management and a built-in LMS. Try it live at https://e-report-frontend.vercel.app/",
   contact: "Sure! You can email him directly at felixatoma2@gmail.com or connect on LinkedIn at linkedin.com/in/felix-atoma-714abb269. He’s always happy to hear from you!",
   help: "I'm here to assist! Ask me about Felixio’s skills, experience, recent projects, or how to contact him.",
   greeting: "I’m doing great, thanks for asking! 😊 How can I assist you today?",
