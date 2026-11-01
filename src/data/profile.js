@@ -9,6 +9,7 @@ export const contact = {
   email: "felixatoma2@gmail.com",
   linkedin: "https://linkedin.com/in/felix-atoma-714abb269",
   whatsapp: "https://wa.me/233244173068",
+  facebook: "https://www.facebook.com/felix.atoma.1",
 };
 
 export const summary =

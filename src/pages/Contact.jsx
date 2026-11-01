@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaArrowRight } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaArrowRight, FaFacebookF, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 import PageHeader from '../components/PageHeader';
+import { contact } from '../data/profile';
 
 const spinnerVariants = {
   animate: { rotate: 360 },
@@ -12,6 +13,12 @@ const contactDetails = [
   { icon: <FaMapMarkerAlt />, label: 'Location', value: 'Accra, Ghana' },
   { icon: <FaEnvelope />, label: 'Email', value: 'felixatoma2@gmail.com', href: 'mailto:felixatoma2@gmail.com' },
   { icon: <FaPhoneAlt />, label: 'Phone', value: '+233 24 417 3068', href: 'tel:+233244173068' },
+];
+
+const socials = [
+  { icon: <FaFacebookF />, href: contact.facebook, label: 'Facebook' },
+  { icon: <FaLinkedinIn />, href: contact.linkedin, label: 'LinkedIn' },
+  { icon: <FaWhatsapp />, href: contact.whatsapp, label: 'WhatsApp' },
 ];
 
 const Contact = () => {
@@ -78,6 +85,24 @@ const Contact = () => {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted">Follow me</p>
+              <div className="mt-3 flex gap-3">
+                {socials.map(({ icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="flex h-12 w-12 items-center justify-center border border-divider bg-white text-charcoal transition hover:border-brand hover:bg-brand"
+                  >
+                    {icon}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="border-t-4 border-brand bg-white p-6 shadow-sm md:p-10">
