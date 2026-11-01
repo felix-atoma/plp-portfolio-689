@@ -1,31 +1,31 @@
-import { FaLightbulb, FaPencilRuler, FaCode, FaChartLine } from "react-icons/fa";
+import { FaCode, FaShieldAlt, FaLanguage, FaChalkboardTeacher } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Skills = () => {
   const expertiseData = [
     {
-      icon: <FaLightbulb />,
-      title: "Design Thinking & UX Strategy",
-      description: "Translating business goals into user-centered designs for startups, NGOs, and enterprise needs.",
-      position: "Projects: Nashma Agribusiness, United Intellects",
-    },
-    {
-      icon: <FaPencilRuler />,
-      title: "UI/UX Design",
-      description: "Expert in Figma, Tailwind CSS, and FlutterFlow. Designed multilingual, responsive platforms for mobile and web.",
-      position: "Trained at MEST Africa",
-    },
-    {
       icon: <FaCode />,
-      title: "Full Stack & Mobile Development",
-      description: "React, React Native, FlutterFlow, Vite, and MERN stack. Experience with APIs, geolocation, animations, and real-time UI.",
-      position: "Trackor, FarmConnect, ImmoAsk, Real Estate Platform (Togo)",
+      title: "Full-Stack Web Development",
+      description: "Web applications from database design to cloud deployment with React, Node.js, NestJS, Python and SQL.",
+      position: "NovaBulletin · Freelance web development",
     },
     {
-      icon: <FaChartLine />,
-      title: "Web3, Cybersecurity & Multilingual Communication",
-      description: "Web3 and cybersecurity enthusiast at Helicode Academy. French-English translator and ICT teacher.",
-      position: "Taught at Ecole St Pierre Claver, Translator & ICT Instructor",
+      icon: <FaShieldAlt />,
+      title: "Secure Data Handling",
+      description: "Authentication, role-based access control and data protection for platforms that hold sensitive records.",
+      position: "QR-code verification · One-time-code login",
+    },
+    {
+      icon: <FaLanguage />,
+      title: "French–English Translation",
+      description: "Administrative, academic and technical translation with strict accuracy and confidentiality, using SDL Trados and MemoQ.",
+      position: "University of Ghana Translation Bureau",
+    },
+    {
+      icon: <FaChalkboardTeacher />,
+      title: "IT Training & Teaching",
+      description: "Teaching coding and IT essentials, with lessons, exercises and assessments, in English and French.",
+      position: "NSPS Programme · Liberty Lyceum",
     },
   ];
 
@@ -34,7 +34,7 @@ const Skills = () => {
       <div className="container-x">
         <div className="max-w-2xl">
           <p className="eyebrow">What I do</p>
-          <h2 className="section-title">From idea to shipped product</h2>
+          <h2 className="section-title">Code and language, in English and French</h2>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

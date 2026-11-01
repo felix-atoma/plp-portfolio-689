@@ -1,16 +1,17 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaDownload } from "react-icons/fa";
 import Skills from "../components/Skills";
 import MyWorks from "../components/MyWorks";
 import AboutMe from "../components/About";
-import TestimonialCarousel from "../components/Testimonials";
+import Experience from "../components/Experience";
+import { CV_URL } from "../data/profile";
 
 const stats = [
-  { value: "2024", label: "NovaBulletin founded" },
-  { value: "6", label: "Countries served" },
-  { value: "12+", label: "Core technologies" },
-  { value: "2", label: "Working languages (EN / FR)" },
+  { value: "12+", label: "Years of professional experience" },
+  { value: "2", label: "Working languages (FR / EN)" },
+  { value: "5", label: "User roles in NovaBulletin" },
+  { value: "16", label: "Tools & technologies" },
 ];
 
 const Home = () => {
@@ -27,21 +28,23 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="eyebrow-light">Software engineer · Teacher · Translator</p>
-            <h1 className="mt-5 text-4xl font-extrabold leading-tight text-white md:text-6xl">
-              I build software for <span className="text-brand">African schools</span> and businesses
+            <p className="eyebrow-light">Software developer · French–English translator</p>
+            <p className="mt-5 text-xl font-semibold text-white md:text-2xl">Hi, I'm Felix Atoma.</p>
+            <h1 className="mt-2 text-4xl font-extrabold leading-tight text-white md:text-6xl">
+              I build <span className="text-brand">secure web apps</span> in English and French
             </h1>
             <p className="mt-6 max-w-xl text-base text-on-dark md:text-lg">
-              I'm Felix, lead engineer at Felixio and co-founder of NovaBulletin. I design and ship web and
-              mobile products with React, React Native and the MERN stack, from the first sketch to production.
+              Bilingual full-stack developer based in Accra. I build and deploy web applications with Node.js, NestJS,
+              React, Python and SQL, and I'm the founder and lead developer of NovaBulletin, a live school management
+              platform.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a href="#my-works" className="btn-brand">
-                View my work <FaArrowRight />
+                See NovaBulletin <FaArrowRight />
               </a>
-              <Link to="/contact" className="btn-outline-light">
-                Let's talk
-              </Link>
+              <a href={CV_URL} download className="btn-outline-light">
+                Download CV <FaDownload />
+              </a>
             </div>
           </motion.div>
 
@@ -84,15 +87,15 @@ const Home = () => {
       {/* Featured Project */}
       <MyWorks />
 
-      {/* Testimonials Section */}
-      <TestimonialCarousel />
+      {/* Experience & Education */}
+      <Experience />
 
       {/* Call to Action */}
       <section className="bg-brand py-16">
         <div className="container-x flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <h2 className="text-2xl font-bold text-charcoal md:text-3xl">Have a project in mind?</h2>
-            <p className="mt-2 text-charcoal/80">Tell me about it and let's build it together.</p>
+            <h2 className="text-2xl font-bold text-charcoal md:text-3xl">Need a developer or a translator?</h2>
+            <p className="mt-2 text-charcoal/80">Tell me about your project, in English or in French.</p>
           </div>
           <Link to="/contact" className="btn-dark">
             Start a conversation <FaArrowRight />

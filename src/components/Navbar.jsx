@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaFacebookF, FaLinkedinIn, FaWhatsapp, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import PageLoader from "../components/PageLoader";
+import Monogram from "./Monogram";
 
 const links = [
   { name: "Home", path: "/" },
@@ -71,8 +72,8 @@ const Navbar = () => {
           <nav className="container-x flex h-16 items-center justify-between md:h-20">
             {/* Logo */}
             <button onClick={() => handleNavigation("/")} className="flex items-center gap-3">
-              <img src="/logo.png" alt="Felixio Logo" className="h-10 w-10 rounded-full object-cover" />
-              <span className="text-xl font-bold text-charcoal">Felixio</span>
+              <Monogram />
+              <span className="text-xl font-bold text-charcoal">Felix Atoma</span>
             </button>
 
             {/* Navigation Links */}

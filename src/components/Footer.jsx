@@ -9,6 +9,8 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import Monogram from "./Monogram";
+import { CV_URL } from "../data/profile";
 
 const links = [
   { name: "Home", path: "/" },
@@ -30,18 +32,18 @@ const Footer = () => {
         {/* Brand */}
         <div className="lg:col-span-2">
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="Felixio Logo" className="h-10 w-10 rounded-full object-cover" />
-            <span className="text-xl font-bold text-white">Felixio</span>
+            <Monogram />
+            <span className="text-xl font-bold text-white">Felix Atoma</span>
           </div>
           <p className="mt-5 max-w-sm text-sm leading-relaxed">
-            Software engineer, teacher and translator building web and mobile products for schools and
-            businesses across West Africa.
+            Bilingual software developer and French–English translator in Accra, building secure web applications
+            for schools and businesses. Founder of NovaBulletin.
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
             <Link to="/contact" className="btn-brand">
               Let's Talk
             </Link>
-            <a href="/Felix Atoma (3).pdf" download className="btn-outline-light">
+            <a href={CV_URL} download className="btn-outline-light">
               Download CV
             </a>
           </div>
@@ -99,7 +101,7 @@ const Footer = () => {
       {/* Footer Bottom Text */}
       <div className="border-t border-white/10">
         <p className="container-x py-6 text-xs">
-          &copy; {new Date().getFullYear()} Felixio. All rights reserved. Design inspired by Industry by Colorlib.
+          &copy; {new Date().getFullYear()} Felix Atoma. All rights reserved. Design inspired by Industry by Colorlib.
         </p>
       </div>
 

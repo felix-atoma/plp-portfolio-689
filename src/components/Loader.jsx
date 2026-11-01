@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import Monogram from "./Monogram";
 
 const Loader = ({ onFinish }) => {
   useEffect(() => {
@@ -13,11 +14,7 @@ const Loader = ({ onFinish }) => {
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-white z-[9999]">
       <div className="relative w-28 h-28">
         {/* Logo */}
-        <img
-          src="/logo.png"
-          alt="Logo"
-          className="w-20 h-20 rounded-full object-cover z-10 absolute top-4 left-4"
-        />
+        <Monogram className="absolute left-6 top-6 z-10 h-16 w-16 text-xl" />
 
         {/* Spinner Circle */}
         <div className="absolute inset-0 animate-spin rounded-full border-4 border-brand border-t-transparent"></div>

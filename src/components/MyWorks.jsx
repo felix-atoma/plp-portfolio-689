@@ -4,19 +4,19 @@ import { NOVABULLETIN_URL } from "../data/links";
 
 const project = {
   title: "NovaBulletin",
-  tagline: "School management software for schools in West Africa",
+  role: "Founder & Lead Developer",
+  tagline: "School management platform for schools in West Africa",
   description:
-    "An edtech platform from Lomé, Togo that takes schools off Excel: averages are calculated automatically, report cards are generated as PDFs in one click, and parents are notified by WhatsApp and SMS.",
+    "A full-stack platform that manages student records, grades, report cards, attendance, fees and parent communication. Averages are calculated automatically, report cards are generated as PDFs in one click, and parents are notified by WhatsApp and SMS.",
   features: [
-    "Automatic grade averages",
+    "Role-based access for five user types",
+    "QR-code verification of report cards against forgery",
+    "One-time-code login",
     "PDF report cards with school logo",
     "WhatsApp & SMS alerts to parents",
-    "School fees management",
-    "Multi-role dashboards",
-    "Built-in LMS: courses, homework, quizzes",
-    "Attendance, health & library",
-    "Web, Android & iOS",
+    "Fees, attendance & built-in LMS",
   ],
+  stack: ["NestJS", "REST API", "React", "Render", "Vercel"],
   img: "/novabulletin.png",
   url: NOVABULLETIN_URL,
 };
@@ -27,7 +27,7 @@ const MyWorks = () => {
       <div className="container-x">
         <div className="max-w-2xl">
           <p className="eyebrow">Featured project</p>
-          <h2 className="section-title">Latest finished work</h2>
+          <h2 className="section-title">What I've built</h2>
         </div>
 
         {/* Featured Project */}
@@ -44,12 +44,13 @@ const MyWorks = () => {
               className="w-full transition duration-500 group-hover:scale-105"
             />
             <span className="absolute left-0 top-0 bg-brand px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-charcoal">
-              Edtech · SaaS
+              Live · Edtech
             </span>
           </a>
 
           <div className="flex flex-col p-8 md:p-12">
-            <h3 className="text-3xl font-bold text-charcoal">{project.title}</h3>
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted">{project.role}</p>
+            <h3 className="mt-2 text-3xl font-bold text-charcoal">{project.title}</h3>
             <p className="mt-2 text-sm font-semibold text-brand-deep">{project.tagline}</p>
             <p className="mt-5 text-base leading-relaxed text-muted">{project.description}</p>
             <ul className="mt-6 grid grid-cols-1 gap-x-6 gap-y-2 text-sm text-charcoal sm:grid-cols-2">
@@ -60,9 +61,16 @@ const MyWorks = () => {
                 </li>
               ))}
             </ul>
+            <ul className="mt-6 flex flex-wrap gap-2">
+              {project.stack.map((tech) => (
+                <li key={tech} className="bg-surface px-3 py-1 text-xs font-semibold text-charcoal">
+                  {tech}
+                </li>
+              ))}
+            </ul>
             <div className="mt-auto pt-8">
               <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn-brand">
-                View live project <FaExternalLinkAlt />
+                Visit novabulletin.vercel.app <FaExternalLinkAlt />
               </a>
             </div>
           </div>

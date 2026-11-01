@@ -2,21 +2,27 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaRobot, FaTimes, FaUndo } from "react-icons/fa";
 import { NOVABULLETIN_URL } from "../data/links";
+import { CV_URL } from "../data/profile";
+import Monogram from "./Monogram";
 
 const assistantResponses = {
-  skills: "Absolutely! Felixio is highly skilled in React, React Native, FlutterFlow, UI/UX Design, Tailwind CSS, and the entire MERN stack. He builds responsive and modern web and mobile apps.",
-  experience: "Of course! Felixio has worked with brands like Nashma Agribusiness, United Intellects, and collaborated on projects such as ImmoAsk and Agence Immobilière in Togo. He also has teaching and translation experience.",
-  projects: "Glad you asked! Felixio’s featured project is NovaBulletin, a school management platform for West African schools: automatic grade averages, one-click PDF report cards, WhatsApp and SMS alerts to parents, fee management and a built-in LMS.",
-  contact: "Sure! You can email him directly at felixatoma2@gmail.com or connect on LinkedIn at linkedin.com/in/felix-atoma-714abb269. He’s always happy to hear from you!",
-  help: "I'm here to assist! Ask me about Felixio’s skills, experience, recent projects, or how to contact him.",
+  skills: "Absolutely! Felix builds secure full-stack web apps with JavaScript, React, Node.js / Express, NestJS, Python, SQL / MongoDB and REST APIs, and deploys them with Git, Render, Vercel and Firebase. He also works with WordPress, SDL Trados and MemoQ.",
+  experience: "Of course! Felix is the founder and lead developer of NovaBulletin, a French–English translator at the University of Ghana Translation Bureau, a freelance web developer, and a senior French & English educator at Liberty Lyceum. He also taught coding as an IT Facilitator on the NSPS programme and interned as a software developer at Corextreme in Cameroon. That's over 12 years of professional experience.",
+  projects: "Glad you asked! Felix founded and builds NovaBulletin, a live school management platform: student records, grades, PDF report cards, attendance, fees and WhatsApp/SMS alerts to parents, with QR-code verification of report cards and one-time-code login.",
+  languages: "Felix is a native French speaker and fluent in English, with a BA in English from Université de Lomé. He translates administrative, academic and technical documents at the University of Ghana Translation Bureau.",
+  education: "Felix completed the Software Engineering Programme at Power Learn Project (2025), the Junior Web Developer Programme with Generation Ghana & MEST Africa (2024), and a BA in English at Université de Lomé (2012).",
+  cv: "Here's Felix's CV, ready to download.",
+  contact: "Sure! You can email him directly at felixatoma2@gmail.com, call +233 24 417 3068, or connect on LinkedIn at linkedin.com/in/felix-atoma-714abb269. He’s always happy to hear from you!",
+  help: "I'm here to assist! Ask me about Felix’s skills, experience, NovaBulletin, translation work, or how to contact him.",
   greeting: "I’m doing great, thanks for asking! 😊 How can I assist you today?",
   thanks: "You’re very welcome! Let me know if there’s anything else I can do for you.",
   goodbye: "It was lovely chatting with you! Have a wonderful day and feel free to return anytime. 🌞",
-  default: "Hmm, I’m not totally sure about that, but you can ask me things like: 'What are his skills?', 'What projects has he built?', or 'How can I contact him?' 😊"
+  default: "Hmm, I’m not totally sure about that, but you can ask me things like: 'What are his skills?', 'What has he built?', 'Does he translate?' or 'Can I see his CV?' 😊"
 };
 
 const assistantLinks = {
   projects: { href: NOVABULLETIN_URL, label: "Try NovaBulletin live" },
+  cv: { href: CV_URL, label: "Download CV (PDF)", download: true },
 };
 
 export default function PortfolioAssistant() {
@@ -24,7 +30,7 @@ export default function PortfolioAssistant() {
   const [messages, setMessages] = useState([
     {
       from: "assistant",
-      text: "Hi there! 👋 I'm Felixio’s portfolio assistant. Ask me anything about his skills, projects, or how to get in touch."
+      text: "Hi there! 👋 I'm Felix’s portfolio assistant. Ask me anything about his skills, NovaBulletin, his experience, or how to get in touch."
     }
   ]);
   const [typing, setTyping] = useState(false);
@@ -41,9 +47,12 @@ export default function PortfolioAssistant() {
 
     const input = userInput.toLowerCase();
     let matched = "default";
-    if (input.includes("skill")) matched = "skills";
-    else if (input.includes("experience")) matched = "experience";
-    else if (input.includes("project")) matched = "projects";
+    if (input.includes("cv") || input.includes("resume") || input.includes("résumé")) matched = "cv";
+    else if (input.includes("skill") || input.includes("tech") || input.includes("stack")) matched = "skills";
+    else if (input.includes("experience") || input.includes("work") || input.includes("job")) matched = "experience";
+    else if (input.includes("project") || input.includes("built") || input.includes("novabulletin")) matched = "projects";
+    else if (input.includes("translat") || input.includes("french") || input.includes("language")) matched = "languages";
+    else if (input.includes("educat") || input.includes("degree") || input.includes("study") || input.includes("train")) matched = "education";
     else if (input.includes("contact") || input.includes("email") || input.includes("reach")) matched = "contact";
     else if (input.includes("thank")) matched = "thanks";
     else if (input.includes("bye") || input.includes("have a nice")) matched = "goodbye";
@@ -66,7 +75,7 @@ export default function PortfolioAssistant() {
     setMessages([
       {
         from: "assistant",
-        text: "Hi again! 👋 I’m Felixio’s assistant. Feel free to ask anything about his work or contact details."
+        text: "Hi again! 👋 I’m Felix’s assistant. Feel free to ask anything about his work or contact details."
       }
     ]);
     setTyping(false);
@@ -93,7 +102,7 @@ export default function PortfolioAssistant() {
           className="bg-white shadow-2xl p-4 w-80 max-w-[calc(100vw-3rem)] text-sm border-t-4 border-brand flex flex-col"
         >
           <div className="flex justify-between items-center mb-2">
-            <h4 className="font-bold text-gray-800">👋 Chat with Felixio</h4>
+            <h4 className="font-bold text-charcoal">👋 Chat with Felix’s assistant</h4>
             <button onClick={() => setIsOpen(false)} className="text-muted hover:text-charcoal">
               <FaTimes />
             </button>
@@ -103,7 +112,7 @@ export default function PortfolioAssistant() {
             {messages.map((msg, idx) => (
               <div key={idx} className={`flex items-start gap-2 ${msg.from === "user" ? "justify-end" : "justify-start"}`}>
                 {msg.from === "assistant" && (
-                  <img src="/logo.png" alt="assistant" className="w-6 h-6 rounded-full object-cover" />
+                  <Monogram className="h-6 w-6 text-[0.55rem]" />
                 )}
                 <div
                   className={`px-3 py-2 rounded-lg text-sm max-w-[85%] ${
@@ -118,6 +127,7 @@ export default function PortfolioAssistant() {
                       href={msg.link.href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      download={msg.link.download || undefined}
                       className="mt-2 block font-semibold text-brand-deep underline hover:text-charcoal"
                     >
                       {msg.link.label} →
@@ -128,7 +138,7 @@ export default function PortfolioAssistant() {
             ))}
             {typing && (
               <div className="flex items-center gap-2">
-                <img src="/logo.png" alt="typing..." className="w-6 h-6 rounded-full object-cover" />
+                <Monogram className="h-6 w-6 text-[0.55rem]" />
                 <span className="italic text-brand-deep">Typing...</span>
               </div>
             )}

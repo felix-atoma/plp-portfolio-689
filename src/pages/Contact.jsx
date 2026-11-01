@@ -60,7 +60,7 @@ const Contact = () => {
             <p className="eyebrow">Let's work together</p>
             <h2 className="section-title">Let's build something great together</h2>
             <p className="mt-6 text-base leading-relaxed text-muted">
-              As a Frontend Engineer specializing in <span className="font-semibold text-charcoal">React.js, Next.js, JavaScript, and UI/UX design</span>, I craft seamless and visually appealing digital experiences.
+              Whether you need a <span className="font-semibold text-charcoal">secure web application, a business website, or a French–English translation</span>, send me a message in English or in French.
             </p>
 
             <ul className="mt-10 space-y-6">

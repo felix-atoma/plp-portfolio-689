@@ -1,22 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
-
-const skills = [
-  { name: "React.js", percentage: 90 },
-  { name: "Next.js", percentage: 85 },
-  { name: "React Native", percentage: 80 },
-  { name: "JavaScript", percentage: 95 },
-  { name: "TypeScript", percentage: 75 },
-  { name: "Python", percentage: 70 },
-  { name: "Tailwind CSS", percentage: 90 },
-  { name: "UI/UX Design", percentage: 85 },
-  { name: "SQL", percentage: 80 },
-  { name: "MongoDB", percentage: 75 },
-  { name: "Node.js", percentage: 85 },
-  { name: "Express.js", percentage: 80 }
-];
+import { CV_URL, technicalSkills, languages, competencies } from "../data/profile";
 
 const AboutMe = () => {
   return (
@@ -24,47 +9,69 @@ const AboutMe = () => {
       <div className="container-x grid items-start gap-12 md:grid-cols-2 md:gap-20">
         <div>
           <p className="eyebrow">About me</p>
-          <h2 className="section-title">One engineer, sketch to production</h2>
+          <h2 className="section-title">Developer, translator and educator</h2>
           <p className="mt-6 text-base leading-relaxed text-muted">
-            I'm a passionate software engineer with a strong focus on frontend engineering.
-            I specialize in building intuitive, accessible, and visually appealing web and mobile applications.
+            I'm a bilingual software developer and French–English translator: a native French speaker, fluent in
+            English. I build and deploy secure full-stack web applications and created NovaBulletin, a live school
+            management platform.
           </p>
           <p className="mt-4 text-base leading-relaxed text-muted">
-            With expertise in modern JavaScript frameworks, I aim to create seamless and high-performance user experiences.
+            I trained in software engineering with Power Learn Project and Generation Ghana / MEST Africa, and bring
+            over 12 years of professional experience, rigorous handling of confidential information, and the ability
+            to work across technical and language tasks in both English and French.
           </p>
-          <a
-            href="/Felix Atoma (3).pdf"
-            download
-            className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-charcoal transition hover:text-brand-deep"
-          >
-            Download my CV <FaArrowRight className="text-brand" />
-          </a>
-          <Link
-            to="/contact"
-            className="ml-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-charcoal transition hover:text-brand-deep"
-          >
-            Get in touch <FaArrowRight className="text-brand" />
-          </Link>
+
+          <div className="mt-8 grid grid-cols-2 gap-4">
+            {languages.map(({ name, level }) => (
+              <div key={name} className="border-l-4 border-brand bg-surface px-4 py-3">
+                <p className="font-semibold text-charcoal">{name}</p>
+                <p className="text-xs uppercase tracking-[0.15em] text-muted">{level}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+            <a
+              href={CV_URL}
+              download
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-charcoal transition hover:text-brand-deep"
+            >
+              Download my CV <FaArrowRight className="text-brand" />
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-charcoal transition hover:text-brand-deep"
+            >
+              Get in touch <FaArrowRight className="text-brand" />
+            </Link>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
-          {skills.map((skill, index) => (
-            <div key={index}>
-              <div className="mb-2 flex items-center justify-between text-sm">
-                <span className="font-semibold text-charcoal">{skill.name}</span>
-                <span className="font-display text-brand-deep">{skill.percentage}%</span>
-              </div>
-              <div className="h-1.5 w-full bg-divider">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.percentage}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1 }}
-                  className="h-1.5 bg-brand"
-                />
-              </div>
+        <div className="space-y-8">
+          {technicalSkills.map(({ group, items }) => (
+            <div key={group}>
+              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-deep">{group}</h3>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {items.map((item) => (
+                  <li key={item} className="border border-divider px-3 py-1.5 text-sm font-medium text-charcoal">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
+
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-deep">Key competencies</h3>
+            <ul className="mt-3 grid grid-cols-1 gap-2 text-sm text-charcoal sm:grid-cols-2">
+              {competencies.map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 shrink-0 bg-brand" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

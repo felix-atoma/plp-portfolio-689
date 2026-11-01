@@ -1,17 +1,17 @@
 import PageHeader from "../components/PageHeader";
-import Skills from "../components/Skills";
 import MyWorks from "../components/MyWorks";
+import Experience from "../components/Experience";
 
 const Works = () => {
   return (
     <div>
       <PageHeader
         eyebrow="My Work"
-        title="Skills & work"
-        intro="What I bring to a project, and the product I'm proudest of shipping."
+        title="Work & experience"
+        intro="NovaBulletin, the platform I founded and build, and the roles that shaped how I work."
       />
-      <Skills />
       <MyWorks />
+      <Experience />
     </div>
   );
 };
