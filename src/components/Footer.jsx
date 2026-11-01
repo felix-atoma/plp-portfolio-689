@@ -20,7 +20,7 @@ const links = [
 ];
 
 const socials = [
-  { icon: <FaFacebookF />, href: "https://www.facebook.com/home.php", label: "Facebook" },
+  { icon: <FaFacebookF />, href: "https://www.facebook.com/felix.atoma.1", label: "Facebook" },
   { icon: <FaLinkedinIn />, href: "https://linkedin.com/in/felix-atoma-714abb269", label: "LinkedIn" },
   { icon: <FaWhatsapp />, href: "https://wa.me/233244173068", label: "WhatsApp" },
 ];
