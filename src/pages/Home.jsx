@@ -6,15 +6,35 @@ import MyWorks from "../components/MyWorks";
 import AboutMe from "../components/About";
 import Experience from "../components/Experience";
 import { CV_URL } from "../data/profile";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const stats = [
-  { value: "12+", label: "Years of professional experience" },
-  { value: "2", label: "Working languages (FR / EN)" },
-  { value: "5", label: "User roles in NovaBulletin" },
-  { value: "16", label: "Tools & technologies" },
+  { value: "12+", label: { en: "Years of professional experience", fr: "Années d'expérience professionnelle" } },
+  { value: "2", label: { en: "Working languages (FR / EN)", fr: "Langues de travail (FR / EN)" } },
+  { value: "5", label: { en: "User roles in NovaBulletin", fr: "Rôles utilisateurs dans NovaBulletin" } },
+  { value: "16", label: { en: "Tools & technologies", fr: "Outils & technologies" } },
 ];
 
+const copy = {
+  eyebrow: { en: "Software developer · French–English translator", fr: "Développeur logiciel · Traducteur français–anglais" },
+  hello: { en: "Hi, I'm Felix Atoma.", fr: "Bonjour, je suis Felix Atoma." },
+  titleStart: { en: "I build ", fr: "Je crée des " },
+  titleHighlight: { en: "secure web apps", fr: "applications web sécurisées" },
+  titleEnd: { en: " in English and French", fr: ", en français et en anglais" },
+  intro: {
+    en: "Bilingual full-stack developer based in Accra. I build and deploy web applications with Node.js, NestJS, React, Python and SQL, and I'm the founder and lead developer of NovaBulletin, a live school management platform.",
+    fr: "Développeur full-stack bilingue basé à Accra. Je conçois et déploie des applications web avec Node.js, NestJS, React, Python et SQL, et je suis le fondateur et développeur principal de NovaBulletin, une plateforme de gestion scolaire en ligne.",
+  },
+  seeProject: { en: "See NovaBulletin", fr: "Voir NovaBulletin" },
+  cv: { en: "Download CV", fr: "Télécharger le CV" },
+  ctaTitle: { en: "Need a developer or a translator?", fr: "Besoin d'un développeur ou d'un traducteur ?" },
+  ctaText: { en: "Tell me about your project, in English or in French.", fr: "Parlez-moi de votre projet, en français ou en anglais." },
+  ctaButton: { en: "Start a conversation", fr: "Prendre contact" },
+};
+
 const Home = () => {
+  const { tr } = useLanguage();
+
   return (
     <div>
       {/* Hero Section */}
@@ -28,22 +48,20 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="eyebrow-light">Software developer · French–English translator</p>
-            <p className="mt-5 text-xl font-semibold text-white md:text-2xl">Hi, I'm Felix Atoma.</p>
-            <h1 className="mt-2 text-4xl font-extrabold leading-tight text-white md:text-6xl">
-              I build <span className="text-brand">secure web apps</span> in English and French
+            <p className="eyebrow-light">{tr(copy.eyebrow)}</p>
+            <p className="mt-5 text-xl font-semibold text-white md:text-2xl">{tr(copy.hello)}</p>
+            <h1 className="mt-2 text-4xl font-extrabold leading-tight text-white md:text-5xl">
+              {tr(copy.titleStart)}
+              <span className="text-brand">{tr(copy.titleHighlight)}</span>
+              {tr(copy.titleEnd)}
             </h1>
-            <p className="mt-6 max-w-xl text-base text-on-dark md:text-lg">
-              Bilingual full-stack developer based in Accra. I build and deploy web applications with Node.js, NestJS,
-              React, Python and SQL, and I'm the founder and lead developer of NovaBulletin, a live school management
-              platform.
-            </p>
+            <p className="mt-6 max-w-xl text-base text-on-dark md:text-lg">{tr(copy.intro)}</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a href="#my-works" className="btn-brand">
-                See NovaBulletin <FaArrowRight />
+                {tr(copy.seeProject)} <FaArrowRight />
               </a>
               <a href={CV_URL} download className="btn-outline-light">
-                Download CV <FaDownload />
+                {tr(copy.cv)} <FaDownload />
               </a>
             </div>
           </motion.div>
@@ -71,14 +89,14 @@ const Home = () => {
         <div className="container-x grid grid-cols-2 gap-10 text-center md:grid-cols-4">
           {stats.map(({ value, label }, index) => (
             <motion.div
-              key={label}
+              key={value + label.en}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <p className="font-display text-4xl font-bold text-brand md:text-5xl">{value}</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.2em] text-on-dark">{label}</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.2em] text-on-dark">{tr(label)}</p>
             </motion.div>
           ))}
         </div>
@@ -94,11 +112,11 @@ const Home = () => {
       <section className="bg-brand py-16">
         <div className="container-x flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <h2 className="text-2xl font-bold text-charcoal md:text-3xl">Need a developer or a translator?</h2>
-            <p className="mt-2 text-charcoal/80">Tell me about your project, in English or in French.</p>
+            <h2 className="text-2xl font-bold text-charcoal md:text-3xl">{tr(copy.ctaTitle)}</h2>
+            <p className="mt-2 text-charcoal/80">{tr(copy.ctaText)}</p>
           </div>
           <Link to="/contact" className="btn-dark">
-            Start a conversation <FaArrowRight />
+            {tr(copy.ctaButton)} <FaArrowRight />
           </Link>
         </div>
       </section>

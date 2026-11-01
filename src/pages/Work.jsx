@@ -6,9 +6,12 @@ const Works = () => {
   return (
     <div>
       <PageHeader
-        eyebrow="My Work"
-        title="Work & experience"
-        intro="NovaBulletin, the platform I founded and build, and the roles that shaped how I work."
+        eyebrow={{ en: "My Work", fr: "Réalisations" }}
+        title={{ en: "Work & experience", fr: "Réalisations & parcours" }}
+        intro={{
+          en: "NovaBulletin, the platform I founded and build, and the roles that shaped how I work.",
+          fr: "NovaBulletin, la plateforme que j'ai fondée et que je développe, et les postes qui ont façonné ma façon de travailler.",
+        }}
       />
       <MyWorks />
       <Experience />
