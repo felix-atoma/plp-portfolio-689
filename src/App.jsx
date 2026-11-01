@@ -6,6 +6,7 @@ import Works from "./pages/Work";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import NotFound from "./components/NotFound";
+import NovaBulletinRedirect from "./components/NovaBulletinRedirect";
 import Loader from "./components/Loader"; // ✅ Import the spinner loader
 import PortfolioAssistant from "./components/PortfolioAssistant"; // ✅ Import the assistant
 
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: "contact", element: <Contact /> },
       { path: "services", element: <Services /> },
       { path: "/work", element: <Works /> },
+      { path: "novabulletin", element: <NovaBulletinRedirect /> },
       { path: "*", element: <NotFound /> },
     ],
   },

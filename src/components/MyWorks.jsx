@@ -1,5 +1,6 @@
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { NOVABULLETIN_URL } from "../data/links";
 
 const project = {
   title: "NovaBulletin",
@@ -17,7 +18,7 @@ const project = {
     "Web, Android & iOS",
   ],
   img: "/novabulletin.png",
-  url: "https://e-report-frontend.vercel.app/",
+  url: NOVABULLETIN_URL,
 };
 
 const MyWorks = () => {

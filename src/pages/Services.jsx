@@ -1,6 +1,7 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import PageHeader from "../components/PageHeader";
+import { NOVABULLETIN_URL } from "../data/links";
 
 const services = [
   { title: "Website Redesign", img: "/web.png", text: "Modern, fast and responsive rebuilds of existing sites." },
@@ -49,7 +50,7 @@ const Services = () => {
           {/* See My Work Button */}
           <div className="mt-12">
             <a
-              href="https://e-report-frontend.vercel.app/"
+              href={NOVABULLETIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-brand"

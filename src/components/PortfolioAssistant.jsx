@@ -1,17 +1,22 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaRobot, FaTimes, FaUndo } from "react-icons/fa";
+import { NOVABULLETIN_URL } from "../data/links";
 
 const assistantResponses = {
   skills: "Absolutely! Felixio is highly skilled in React, React Native, FlutterFlow, UI/UX Design, Tailwind CSS, and the entire MERN stack. He builds responsive and modern web and mobile apps.",
   experience: "Of course! Felixio has worked with brands like Nashma Agribusiness, United Intellects, and collaborated on projects such as ImmoAsk and Agence Immobilière in Togo. He also has teaching and translation experience.",
-  projects: "Glad you asked! Felixio’s featured project is NovaBulletin, a school management platform for West African schools: automatic grade averages, one-click PDF report cards, WhatsApp and SMS alerts to parents, fee management and a built-in LMS. Try it live at https://e-report-frontend.vercel.app/",
+  projects: "Glad you asked! Felixio’s featured project is NovaBulletin, a school management platform for West African schools: automatic grade averages, one-click PDF report cards, WhatsApp and SMS alerts to parents, fee management and a built-in LMS.",
   contact: "Sure! You can email him directly at felixatoma2@gmail.com or connect on LinkedIn at linkedin.com/in/felix-atoma-714abb269. He’s always happy to hear from you!",
   help: "I'm here to assist! Ask me about Felixio’s skills, experience, recent projects, or how to contact him.",
   greeting: "I’m doing great, thanks for asking! 😊 How can I assist you today?",
   thanks: "You’re very welcome! Let me know if there’s anything else I can do for you.",
   goodbye: "It was lovely chatting with you! Have a wonderful day and feel free to return anytime. 🌞",
   default: "Hmm, I’m not totally sure about that, but you can ask me things like: 'What are his skills?', 'What projects has he built?', or 'How can I contact him?' 😊"
+};
+
+const assistantLinks = {
+  projects: { href: NOVABULLETIN_URL, label: "Try NovaBulletin live" },
 };
 
 export default function PortfolioAssistant() {
@@ -51,7 +56,7 @@ export default function PortfolioAssistant() {
     setTyping(true);
 
     setTimeout(() => {
-      const assistantMessage = { from: "assistant", text: assistantResponses[matched] };
+      const assistantMessage = { from: "assistant", text: assistantResponses[matched], link: assistantLinks[matched] };
       setMessages((prev) => [...prev, assistantMessage]);
       setTyping(false);
     }, 1500);
@@ -108,6 +113,16 @@ export default function PortfolioAssistant() {
                   }`}
                 >
                   {msg.text}
+                  {msg.link && (
+                    <a
+                      href={msg.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 block font-semibold text-brand-deep underline hover:text-charcoal"
+                    >
+                      {msg.link.label} →
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
