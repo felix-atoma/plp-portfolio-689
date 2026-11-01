@@ -240,8 +240,8 @@ export const topics = [
     id: "experience",
     keywords: ["experience", "work history", "career", "job", "jobs", "worked", "employment", "roles", "parcours", "carriere", "poste", "emploi", "travaille"],
     answer: {
-      en: "Felix's experience: Founder & Lead Developer of NovaBulletin; French–English Translator at the University of Ghana Translation Bureau (since Aug 2025); Senior French & English Educator / Academic Coordinator at Liberty Lyceum (since Sept 2025); Freelance Web Developer; IT Facilitator on the NSPS programme (Feb – Jul 2026); Software Developer intern at Corextreme, Cameroon (2024); Educator & Curriculum Coordinator at John Taylor Memorial School (2021 – 2024); and 4 years as a National Examination Grader.",
-      fr: "Parcours de Felix : fondateur et développeur principal de NovaBulletin ; traducteur français–anglais au Bureau de traduction de l'Université du Ghana (depuis août 2025) ; enseignant principal de français et d'anglais / coordinateur pédagogique au Liberty Lyceum (depuis sept. 2025) ; développeur web freelance ; formateur en informatique sur le programme NSPS (févr. – juil. 2026) ; stagiaire développeur chez Corextreme, au Cameroun (2024) ; enseignant et coordinateur des programmes à la John Taylor Memorial School (2021 – 2024) ; et 4 ans comme correcteur d'examens nationaux.",
+      en: "Felix's experience: Founder & Lead Developer of NovaBulletin; French–English Translator at the University of Ghana Translation Bureau (since Aug 2025); Senior Educator and Head of the English Department at Collège St Pierre Claver (since Oct 2012); Freelance Web Developer; IT Facilitator on the NSPS programme (Feb – Jul 2026); Software Developer intern at Corextreme, Cameroon (2024); Educator & Curriculum Coordinator at John Taylor Memorial School (2021 – 2024); and 4 years as a National Examination Grader.",
+      fr: "Parcours de Felix : fondateur et développeur principal de NovaBulletin ; traducteur français–anglais au Bureau de traduction de l'Université du Ghana (depuis août 2025) ; enseignant principal et chef du département d'anglais au Collège St Pierre Claver (depuis oct. 2012) ; développeur web freelance ; formateur en informatique sur le programme NSPS (févr. – juil. 2026) ; stagiaire développeur chez Corextreme, au Cameroun (2024) ; enseignant et coordinateur des programmes à la John Taylor Memorial School (2021 – 2024) ; et 4 ans comme correcteur d'examens nationaux.",
     },
     actions: [A.work, A.cv],
     next: ["translatorJob", "teaching", "internship"],
@@ -257,10 +257,10 @@ export const topics = [
   },
   {
     id: "teaching",
-    keywords: ["teach", "taught", "teacher", "educator", "tutor", "trainer", "training", "liberty lyceum", "john taylor", "nsps", "facilitator", "enseign", "professeur", "formateur", "cours"],
+    keywords: ["teach", "taught", "teacher", "educator", "tutor", "trainer", "training", "st pierre claver", "pierre claver", "head of english", "english department", "john taylor", "nsps", "facilitator", "enseign", "professeur", "formateur", "cours"],
     answer: {
-      en: "Felix has a strong teaching background: Senior French & English Educator and Academic Coordinator at Liberty Lyceum (since Sept 2025), IT Facilitator teaching coding and IT essentials to national service personnel on the NSPS programme (Feb – Jul 2026), and Educator & Curriculum Coordinator at John Taylor Memorial School (2021 – 2024). He can run coding and IT training in English or French.",
-      fr: "Felix a une solide expérience d'enseignement : enseignant principal de français et d'anglais et coordinateur pédagogique au Liberty Lyceum (depuis sept. 2025), formateur en programmation et informatique pour le personnel du service national sur le programme NSPS (févr. – juil. 2026), et enseignant et coordinateur des programmes à la John Taylor Memorial School (2021 – 2024). Il peut animer des formations en programmation et en informatique, en français ou en anglais.",
+      en: "Felix has a strong teaching background: Senior Educator and Head of the English Department at Collège St Pierre Claver (since October 2012), IT Facilitator teaching coding and IT essentials to national service personnel on the NSPS programme (Feb – Jul 2026), and Educator & Curriculum Coordinator at John Taylor Memorial School (2021 – 2024). He can run coding and IT training in English or French.",
+      fr: "Felix a une solide expérience d'enseignement : enseignant principal et chef du département d'anglais au Collège St Pierre Claver (depuis octobre 2012), formateur en programmation et informatique pour le personnel du service national sur le programme NSPS (févr. – juil. 2026), et enseignant et coordinateur des programmes à la John Taylor Memorial School (2021 – 2024). Il peut animer des formations en programmation et en informatique, en français ou en anglais.",
     },
     actions: [A.services],
     next: ["experience", "services"],

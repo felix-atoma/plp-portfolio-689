@@ -37,7 +37,7 @@ const expertiseData = [
       en: "Teaching coding and IT essentials, with lessons, exercises and assessments, in English and French.",
       fr: "Enseignement de la programmation et des bases de l'informatique, avec cours, exercices et évaluations, en français et en anglais.",
     },
-    position: { en: "NSPS Programme · Liberty Lyceum", fr: "Programme NSPS · Liberty Lyceum" },
+    position: { en: "NSPS Programme · Collège St Pierre Claver", fr: "Programme NSPS · Collège St Pierre Claver" },
   },
 ];
 

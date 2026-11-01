@@ -98,13 +98,13 @@ export const experience = [
     ],
   },
   {
-    role: { en: "Senior French & English Educator / Academic Coordinator", fr: "Enseignant principal de français et d'anglais / coordinateur pédagogique" },
-    org: { en: "Liberty Lyceum, Accra", fr: "Liberty Lyceum, Accra" },
-    period: { en: "Sept 2025 – Present", fr: "Sept. 2025 – aujourd'hui" },
+    role: { en: "Senior Educator, Head of English Department", fr: "Enseignant principal, chef du département d'anglais" },
+    org: { en: "Collège St Pierre Claver", fr: "Collège St Pierre Claver" },
+    period: { en: "Oct 2012 – Present", fr: "Oct. 2012 – aujourd'hui" },
     points: [
       {
-        en: "Manage student records, timetables and official correspondence; liaise with staff and parents in French and English.",
-        fr: "Gestion des dossiers des élèves, des emplois du temps et de la correspondance officielle ; liaison avec le personnel et les parents en français et en anglais.",
+        en: "Lead the English department and teach English.",
+        fr: "Direction du département d'anglais et enseignement de l'anglais.",
       },
     ],
   },
