@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaStar, FaChevronLeft, FaChevronRight, FaQuoteLeft } from "react-icons/fa";
 
 const testimonials = [
   {
@@ -40,59 +41,80 @@ export default function TestimonialCarousel() {
       setCurrent((prev) => (prev + 1) % testimonials.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, []);
+  }, [current]);
+
+  const go = (step) => setCurrent((prev) => (prev + step + testimonials.length) % testimonials.length);
+  const item = testimonials[current];
 
   return (
-    <div className="bg-gradient-to-b from-orange-100 to-white py-16 px-4 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        What Clients Say
-      </h2>
-      <p className="text-gray-600 mb-10 max-w-xl mx-auto">
-        Here’s what some of my clients and collaborators from Ghana's tech space
-        have shared about working with me.
-      </p>
-
-      <div className="relative w-full max-w-2xl mx-auto">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.5 }}
-            className="bg-white shadow-xl rounded-2xl p-8 flex flex-col items-center"
-          >
-            <img
-              src={testimonials[current].image}
-              alt={testimonials[current].name}
-              className="w-24 h-24 rounded-full mb-4 object-cover border-4 border-orange-300"
-            />
-            <p className="text-gray-700 italic mb-4 text-lg">
-              “{testimonials[current].feedback}”
-            </p>
-            <h4 className="font-semibold text-xl text-gray-900">
-              {testimonials[current].name}
-            </h4>
-            <p className="text-sm text-orange-600 mt-1">{testimonials[current].role}</p>
-          </motion.div>
-        </AnimatePresence>
-
-        <div className="flex justify-center mt-6 gap-3 flex-wrap">
-          {testimonials.map((item, index) => (
-            <button key={index} onClick={() => setCurrent(index)}>
-              <img
-                src={item.image}
-                alt={item.name}
-                className={`w-12 h-12 rounded-full border-2 transition ${
-                  current === index
-                    ? "border-orange-500 scale-110"
-                    : "border-gray-300 opacity-60 hover:opacity-100"
-                }`}
-              />
+    <section className="bg-white py-20 md:py-28">
+      <div className="container-x grid gap-12 md:grid-cols-[1fr_1.4fr] md:items-center">
+        <div>
+          <p className="eyebrow">Testimonials</p>
+          <h2 className="section-title">What clients say</h2>
+          <p className="mt-5 text-base leading-relaxed text-muted">
+            Here’s what some of my clients and collaborators from Ghana's tech space
+            have shared about working with me.
+          </p>
+          <div className="mt-8 flex gap-3">
+            <button
+              onClick={() => go(-1)}
+              aria-label="Previous testimonial"
+              className="flex h-12 w-12 items-center justify-center border border-divider text-charcoal transition hover:border-brand hover:bg-brand"
+            >
+              <FaChevronLeft />
             </button>
-          ))}
+            <button
+              onClick={() => go(1)}
+              aria-label="Next testimonial"
+              className="flex h-12 w-12 items-center justify-center border border-divider text-charcoal transition hover:border-brand hover:bg-brand"
+            >
+              <FaChevronRight />
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <AnimatePresence mode="wait">
+            <motion.figure
+              key={current}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: 0.4 }}
+              className="relative border-l-4 border-brand bg-surface p-8 md:p-12"
+            >
+              <FaQuoteLeft className="absolute right-8 top-8 text-5xl text-divider" />
+              <div className="flex gap-1 text-brand">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} />
+                ))}
+              </div>
+              <blockquote className="mt-6 text-lg leading-relaxed text-charcoal md:text-xl">
+                “{item.feedback}”
+              </blockquote>
+              <figcaption className="mt-8 flex items-center gap-4">
+                <img src={item.image} alt={item.name} className="h-14 w-14 rounded-full object-cover" />
+                <div>
+                  <p className="font-semibold text-charcoal">{item.name}</p>
+                  <p className="text-sm text-muted">{item.role}</p>
+                </div>
+              </figcaption>
+            </motion.figure>
+          </AnimatePresence>
+
+          <div className="mt-6 flex gap-2">
+            {testimonials.map((t, index) => (
+              <button
+                key={t.name}
+                onClick={() => setCurrent(index)}
+                aria-label={`Show testimonial from ${t.name}`}
+                className={`h-1.5 transition-all ${current === index ? "w-10 bg-brand" : "w-5 bg-divider hover:bg-muted"}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

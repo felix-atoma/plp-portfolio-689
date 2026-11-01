@@ -1,112 +1,104 @@
 import { motion } from "framer-motion";
-import { FaEnvelope } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 import Skills from "../components/Skills";
 import MyWorks from "../components/MyWorks";
 import AboutMe from "../components/About";
 import TestimonialCarousel from "../components/Testimonials";
-import BubbleBackground from "../components/BubbleBackground";
+
+const stats = [
+  { value: "2024", label: "NovaBulletin founded" },
+  { value: "6", label: "Countries served" },
+  { value: "12+", label: "Core technologies" },
+  { value: "2", label: "Working languages (EN / FR)" },
+];
 
 const Home = () => {
   return (
-    <div className="relative">
-      {/* Bubble Background */}
-      <BubbleBackground />
+    <div>
+      {/* Hero Section */}
+      <section id="home" className="relative overflow-hidden bg-dark">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_30%,rgba(250,183,0,0.22),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-      {/* Hero + Contact Section */}
-      <div className="bg-orange-200">
-        {/* Hero Section */}
-        <section
-          id="home"
-          className="flex flex-col md:flex-row justify-center items-center min-h-[500px] md:min-h-[70vh] pt-10 bg-gradient-to-br from-orange-600 to-orange-200 px-6 text-center md:text-left"
-        >
+        <div className="container-x relative grid min-h-[calc(100vh-5rem)] items-center gap-12 py-20 md:grid-cols-[1.3fr_1fr]">
           <motion.div
-            className="flex justify-center mb-6 md:mb-0"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <img
-              src="/Image1.jpg"
-              alt="Felix"
-              className="w-40 h-40 md:w-64 md:h-64 rounded-full object-cover border-4 border-white shadow-lg"
-            />
-          </motion.div>
-
-          <motion.div
-            className="text-left"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <h1 className="text-3xl md:text-5xl font-bold text-white">My name is Felix.</h1>
-            <h2 className="text-xl md:text-3xl font-semibold text-gray-800 mt-2">
-              Software Engineer, Tech Enthusiast, and Teacher
-            </h2>
-            <h3 className="text-lg md:text-2xl font-medium text-gray-700 mt-4">
-              Lead Engineer at Felixio
-            </h3>
-          </motion.div>
-        </section>
-
-        {/* Contact Section */}
-        <section
-          id="contact-info"
-          className="w-full py-8 flex flex-col md:flex-row justify-center items-center gap-12 text-center px-6"
-        >
-          <motion.div
-            className="contact-item"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h3 className="text-xl md:text-2xl text-white font-bold">Design For</h3>
-            <p className="text-lg md:text-xl text-white font-semibold">Web & Mobile</p>
-          </motion.div>
-
-          <motion.div
-            className="contact-item"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h3 className="text-xl md:text-2xl text-white font-bold">Phone</h3>
-            <p className="text-lg md:text-xl text-white font-semibold">+233 (24) 417-3068</p>
-          </motion.div>
-
-          <motion.div
-            className="contact-item flex flex-col items-center"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <h3 className="text-xl md:text-2xl text-white font-bold">Drop your Message</h3>
-            <p className="text-lg md:text-xl text-white font-semibold flex items-center gap-2">
-              <FaEnvelope className="text-white text-xl md:text-2xl" />
-              felixatoma2@gmail.com
+            <p className="eyebrow-light">Software engineer · Teacher · Translator</p>
+            <h1 className="mt-5 text-4xl font-extrabold leading-tight text-white md:text-6xl">
+              I build software for <span className="text-brand">African schools</span> and businesses
+            </h1>
+            <p className="mt-6 max-w-xl text-base text-on-dark md:text-lg">
+              I'm Felix, lead engineer at Felixio and co-founder of NovaBulletin. I design and ship web and
+              mobile products with React, React Native and the MERN stack, from the first sketch to production.
             </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a href="#my-works" className="btn-brand">
+                View my work <FaArrowRight />
+              </a>
+              <Link to="/contact" className="btn-outline-light">
+                Let's talk
+              </Link>
+            </div>
           </motion.div>
-        </section>
-      </div>
 
-      {/* Skills Section */}
-      <div className="w-full bg-white relative z-10">
-        <Skills />
-      </div>
+          <motion.div
+            className="relative mx-auto w-64 md:w-full md:max-w-sm"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="absolute -bottom-4 -right-4 h-full w-full border-2 border-brand" />
+            <img src="/Image1.jpg" alt="Felix Atoma" className="relative aspect-[545/632] w-full object-cover" />
+          </motion.div>
+        </div>
+      </section>
 
-      {/* My Works Section */}
-      <div className="w-full bg-white relative z-10">
-        <MyWorks />
-      </div>
+      {/* Services Cards */}
+      <Skills />
 
       {/* About Section */}
-      <div className="w-full bg-white relative z-10">
-        <AboutMe />
-      </div>
+      <AboutMe />
+
+      {/* Counters */}
+      <section className="bg-charcoal py-16">
+        <div className="container-x grid grid-cols-2 gap-10 text-center md:grid-cols-4">
+          {stats.map(({ value, label }, index) => (
+            <motion.div
+              key={label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <p className="font-display text-4xl font-bold text-brand md:text-5xl">{value}</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.2em] text-on-dark">{label}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured Project */}
+      <MyWorks />
 
       {/* Testimonials Section */}
-      <div className="w-full bg-white relative z-10">
-        <TestimonialCarousel />
-      </div>
+      <TestimonialCarousel />
+
+      {/* Call to Action */}
+      <section className="bg-brand py-16">
+        <div className="container-x flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+          <div>
+            <h2 className="text-2xl font-bold text-charcoal md:text-3xl">Have a project in mind?</h2>
+            <p className="mt-2 text-charcoal/80">Tell me about it and let's build it together.</p>
+          </div>
+          <Link to="/contact" className="btn-dark">
+            Start a conversation <FaArrowRight />
+          </Link>
+        </div>
+      </section>
     </div>
   );
 };

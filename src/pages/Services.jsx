@@ -1,57 +1,62 @@
 import React from "react";
+import { FaArrowRight } from "react-icons/fa";
+import PageHeader from "../components/PageHeader";
+
+const services = [
+  { title: "Website Redesign", img: "/web.png", text: "Modern, fast and responsive rebuilds of existing sites." },
+  { title: "Mobile App UI", img: "/mobile.png", text: "Clean, touch-friendly interfaces for Android and iOS." },
+  { title: "E-commerce Platform", img: "/ecommerce2.png", text: "Online stores with catalogues, carts and checkout." },
+  { title: "Dashboard Design", img: "/dashboard2.png", text: "Admin panels and analytics that make data readable." },
+  { title: "Brand Identity", img: "/felixio.png", text: "Logos, colours and type that give a product a voice." },
+  { title: "UX Research", img: "/ux1.png", text: "User interviews and testing that shape what gets built." },
+];
 
 const Services = () => {
   return (
     <div>
-      {/* Hero Section */}
-      <section className="w-full bg-gray-100 py-16 px-6 md:px-20 flex items-start min-h-[50vh]">
-        <div className="max-w-6xl w-full">
-          <div className="text-gray-600 text-lg">
-            <span className="text-red-500 font-semibold">Home</span> / My Services
-          </div>
-          <h2 className="text-5xl md:text-7xl font-extrabold text-gray-900 mt-2 relative inline-block">
-            Services
-            <span className="absolute left-0 -bottom-2 w-24 h-1 bg-red-500"></span>
-          </h2>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="Services"
+        title="Services"
+        intro="Design and development for web and mobile, delivered by one person from the first sketch to launch."
+      />
 
       {/* Services Section */}
-      <section id="services" className="text-center py-16 bg-orange-100 px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Services</h2>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {[
-            { title: "Website Redesign", img: "/web.png" },
-            { title: "Mobile App UI", img: "/mobile.png" },
-            { title: "E-commerce Platform", img: "/ecommerce2.png" },
-            { title: "Dashboard Design", img: "/dashboard2.png" },
-            { title: "Brand Identity", img: "/felixio.png" },
-            { title: "UX Research", img: "/ux1.png" }
-          ].map((work, index) => (
-            <div key={index} className="relative overflow-hidden rounded-lg shadow-lg group">
-              <img
-                src={work.img}
-                alt={work.title}
-                className="w-full h-64 md:h-80 object-cover transition duration-300 transform group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <h3 className="text-2xl font-bold text-white">{work.title}</h3>
-              </div>
-            </div>
-          ))}
-        </div>
+      <section id="services" className="bg-surface py-20 md:py-28">
+        <div className="container-x">
+          <div className="max-w-2xl">
+            <p className="eyebrow">What I offer</p>
+            <h2 className="section-title">Services I build for</h2>
+          </div>
 
-        {/* See My Work Button */}
-        <div className="mt-12">
-          <a
-            href="https://e-report-frontend.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gray-900 border-2 border-white text-white py-2 px-6 rounded-full text-lg font-semibold transition hover:bg-white hover:text-gray-900"
-          >
-            See My Work
-          </a>
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <div key={service.title} className="group bg-white shadow-sm transition hover:shadow-xl">
+                <div className="overflow-hidden">
+                  <img
+                    src={service.img}
+                    alt={service.title}
+                    className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="border-t-4 border-brand p-6">
+                  <h3 className="text-lg font-bold text-charcoal">{service.title}</h3>
+                  <p className="mt-2 text-sm text-muted">{service.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* See My Work Button */}
+          <div className="mt-12">
+            <a
+              href="https://e-report-frontend.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-brand"
+            >
+              See My Work <FaArrowRight />
+            </a>
+          </div>
         </div>
       </section>
     </div>

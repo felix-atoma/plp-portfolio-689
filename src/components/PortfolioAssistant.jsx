@@ -72,7 +72,7 @@ export default function PortfolioAssistant() {
     <div className="fixed bottom-6 left-6 z-50">
       {!isOpen ? (
         <motion.button
-          className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2"
+          className="bg-brand hover:bg-charcoal text-charcoal hover:text-white px-4 py-2 text-sm font-semibold shadow-lg flex items-center gap-2"
           onClick={() => setIsOpen(true)}
           whileHover={{ scale: 1.05 }}
         >
@@ -85,11 +85,11 @@ export default function PortfolioAssistant() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="bg-white shadow-2xl rounded-xl p-4 w-80 text-sm border-t-4 border-orange-500 flex flex-col"
+          className="bg-white shadow-2xl p-4 w-80 max-w-[calc(100vw-3rem)] text-sm border-t-4 border-brand flex flex-col"
         >
           <div className="flex justify-between items-center mb-2">
             <h4 className="font-bold text-gray-800">👋 Chat with Felixio</h4>
-            <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-red-500">
+            <button onClick={() => setIsOpen(false)} className="text-muted hover:text-charcoal">
               <FaTimes />
             </button>
           </div>
@@ -103,8 +103,8 @@ export default function PortfolioAssistant() {
                 <div
                   className={`px-3 py-2 rounded-lg text-sm max-w-[85%] ${
                     msg.from === "assistant"
-                      ? "bg-orange-100 text-gray-800"
-                      : "bg-yellow-500 text-white"
+                      ? "bg-surface text-charcoal"
+                      : "bg-brand text-charcoal"
                   }`}
                 >
                   {msg.text}
@@ -114,7 +114,7 @@ export default function PortfolioAssistant() {
             {typing && (
               <div className="flex items-center gap-2">
                 <img src="/logo.png" alt="typing..." className="w-6 h-6 rounded-full object-cover" />
-                <span className="italic text-orange-500">Typing...</span>
+                <span className="italic text-brand-deep">Typing...</span>
               </div>
             )}
           </div>
@@ -125,17 +125,17 @@ export default function PortfolioAssistant() {
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
               placeholder="Ask anything..."
-              className="flex-1 px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-orange-500"
+              className="flex-1 px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-brand"
             />
             <button
               type="submit"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-3 py-1 rounded-md text-sm font-medium"
+              className="bg-brand hover:bg-charcoal text-charcoal hover:text-white px-3 py-1 text-sm font-medium"
             >
               Send
             </button>
           </form>
 
-          <button onClick={handleReset} className="text-xs text-blue-500 hover:underline flex items-center gap-1 mt-2">
+          <button onClick={handleReset} className="text-xs text-muted hover:text-charcoal hover:underline flex items-center gap-1 mt-2">
             <FaUndo /> Reset
           </button>
         </motion.div>

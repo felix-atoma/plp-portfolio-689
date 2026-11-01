@@ -20,9 +20,9 @@ const Loader = ({ onFinish }) => {
         />
 
         {/* Spinner Circle */}
-        <div className="absolute inset-0 animate-spin rounded-full border-4 border-orange-400 border-t-transparent"></div>
+        <div className="absolute inset-0 animate-spin rounded-full border-4 border-brand border-t-transparent"></div>
       </div>
-      <p className="mt-4 text-orange-400 font-bold">Loading...</p>
+      <p className="mt-4 text-charcoal font-semibold uppercase tracking-[0.2em] text-xs">Loading...</p>
     </div>
   );
 };

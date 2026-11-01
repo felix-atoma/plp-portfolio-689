@@ -1,109 +1,112 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FaFacebookF,
-  FaTwitter,
   FaLinkedinIn,
-  FaInstagram,
   FaArrowUp,
   FaWhatsapp,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
+
+const links = [
+  { name: "Home", path: "/" },
+  { name: "Work", path: "/work" },
+  { name: "Services", path: "/services" },
+  { name: "Contact", path: "/contact" },
+];
+
+const socials = [
+  { icon: <FaFacebookF />, href: "https://www.facebook.com/home.php", label: "Facebook" },
+  { icon: <FaLinkedinIn />, href: "https://linkedin.com/in/felix-atoma-714abb269", label: "LinkedIn" },
+  { icon: <FaWhatsapp />, href: "https://wa.me/233244173068", label: "WhatsApp" },
+];
 
 const Footer = () => {
   return (
-    <footer id="footer" className="bg-gray-900 text-white py-10 px-6 relative">
-      <div className="max-w-7xl mx-auto flex flex-col items-center space-y-8">
-        {/* Logo Image */}
-        <div className="flex items-center justify-center">
-          <img src="/logo.png" alt="Felixio Logo" className="h-12 w-12 rounded-full object-cover" />
+    <footer id="footer" className="bg-dark text-on-dark">
+      <div className="container-x grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Brand */}
+        <div className="lg:col-span-2">
+          <div className="flex items-center gap-3">
+            <img src="/logo.png" alt="Felixio Logo" className="h-10 w-10 rounded-full object-cover" />
+            <span className="text-xl font-bold text-white">Felixio</span>
+          </div>
+          <p className="mt-5 max-w-sm text-sm leading-relaxed">
+            Software engineer, teacher and translator building web and mobile products for schools and
+            businesses across West Africa.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <Link to="/contact" className="btn-brand">
+              Let's Talk
+            </Link>
+            <a href="/Felix Atoma (3).pdf" download className="btn-outline-light">
+              Download CV
+            </a>
+          </div>
         </div>
 
         {/* Navigation Links */}
-        <ul className="flex flex-wrap justify-center gap-4 text-base sm:text-lg text-center">
-          {"Home,Work,Services,Contact".split(",").map((item, index) => (
-            <motion.li
-              key={item}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * index, duration: 0.5 }}
-            >
-              <a
-                href={`${item.toLowerCase()}`}
-                className="text-white hover:text-yellow-400 transition"
-              >
-                {item}
+        <div>
+          <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white">Quick links</h4>
+          <ul className="mt-5 space-y-3 text-sm">
+            {links.map(({ name, path }) => (
+              <li key={name}>
+                <Link to={path} className="transition hover:text-brand">
+                  {name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white">Get in touch</h4>
+          <ul className="mt-5 space-y-3 text-sm">
+            <li className="flex items-center gap-3">
+              <FaMapMarkerAlt className="text-brand" /> Accra, Ghana
+            </li>
+            <li>
+              <a href="tel:+233244173068" className="flex items-center gap-3 transition hover:text-brand">
+                <FaPhoneAlt className="text-brand" /> +233 24 417 3068
               </a>
-            </motion.li>
-          ))}
-        </ul>
-
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto text-center">
-          <motion.a
-            href="contact"
-            className="bg-yellow-500 text-white py-2 px-6 rounded-full text-base font-semibold transition hover:bg-yellow-600"
-            whileHover={{ scale: 1.05 }}
-          >
-            Let's Talk
-          </motion.a>
-          <motion.a
-            href="/Felix Atoma (3).pdf"
-            download
-            className="bg-transparent border-2 border-white text-white py-2 px-6 rounded-full text-base font-semibold transition hover:bg-white hover:text-gray-900"
-            whileHover={{ scale: 1.05 }}
-          >
-            Download CV
-          </motion.a>
+            </li>
+            <li>
+              <a href="mailto:felixatoma2@gmail.com" className="flex items-center gap-3 break-all transition hover:text-brand">
+                <FaEnvelope className="shrink-0 text-brand" /> felixatoma2@gmail.com
+              </a>
+            </li>
+          </ul>
+          <div className="mt-6 flex gap-3">
+            {socials.map(({ icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="flex h-10 w-10 items-center justify-center border border-white/15 text-white transition hover:border-brand hover:bg-brand hover:text-charcoal"
+              >
+                {icon}
+              </a>
+            ))}
+          </div>
         </div>
+      </div>
 
-        {/* Social Media Links */}
-        <div className="flex justify-center gap-6 text-2xl">
-          <motion.a
-            href="https://www.facebook.com/home.php"
-            className="text-white hover:text-yellow-400 transition"
-            whileHover={{ scale: 1.1 }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebookF />
-          </motion.a>
-
-          <motion.a
-            href="https://linkedin.com/in/felix-atoma-714abb269"
-            className="text-white hover:text-yellow-400 transition"
-            whileHover={{ scale: 1.1 }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedinIn />
-          </motion.a>
-
-          <motion.a
-            href="https://wa.me/233244173068"
-            className="text-white hover:text-yellow-400 transition"
-            whileHover={{ scale: 1.1 }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaWhatsapp />
-          </motion.a>
-        </div>
-
-        {/* Footer Bottom Text */}
-        <p className="text-sm text-gray-400 text-center px-4">
-          &copy; 2025 All rights reserved | Made with ❤️ by {" "}
-          <a
-            href="https://frlixio.com"
-            className="text-yellow-400 hover:underline"
-          >
-            Felixio
-          </a>
+      {/* Footer Bottom Text */}
+      <div className="border-t border-white/10">
+        <p className="container-x py-6 text-xs">
+          &copy; {new Date().getFullYear()} Felixio. All rights reserved. Design inspired by Industry by Colorlib.
         </p>
       </div>
 
       {/* Scroll to Top Button */}
       <motion.button
-        className="fixed bottom-6 right-6 bg-yellow-500 hover:bg-yellow-600 text-white p-3 rounded-full shadow-lg transition z-50"
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center bg-brand text-charcoal shadow-lg transition hover:bg-charcoal hover:text-white"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         whileHover={{ scale: 1.1 }}
         aria-label="Scroll to Top"
       >

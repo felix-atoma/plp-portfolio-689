@@ -1,12 +1,27 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
+import { FaFacebookF, FaLinkedinIn, FaWhatsapp, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import PageLoader from "../components/PageLoader";
+
+const links = [
+  { name: "Home", path: "/" },
+  { name: "Work", path: "/work" },
+  { name: "Services", path: "/services" },
+  { name: "Contact", path: "/contact" },
+];
+
+const socials = [
+  { icon: <FaFacebookF />, href: "https://www.facebook.com/home.php", label: "Facebook" },
+  { icon: <FaLinkedinIn />, href: "https://linkedin.com/in/felix-atoma-714abb269", label: "LinkedIn" },
+  { icon: <FaWhatsapp />, href: "https://wa.me/233244173068", label: "WhatsApp" },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const handleNavigation = (path) => {
     setShowLoader(true);
@@ -22,56 +37,79 @@ const Navbar = () => {
     <>
       {showLoader && <PageLoader />}
 
-      <header className="fixed top-0 left-0 w-full bg-orange-400 py-2 shadow-lg z-50">
-        <nav className="container mx-auto flex justify-between items-center px-6">
-          {/* Logo */}
-          <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md">
-            <img
-              src="/logo.png"
-              alt="Felixio Logo"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Navigation Links */}
-          <ul
-            className={`absolute md:static top-14 left-0 w-full md:w-auto bg-orange-400 md:bg-transparent flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 text-center md:text-left p-6 md:p-0 transition-all duration-300 ${
-              isOpen ? "block" : "hidden md:flex"
-            }`}
-          >
-            {[{ name: "Home", path: "/" },
-              { name: "Work", path: "/work" },
-              { name: "Services", path: "/services" },
-              { name: "Contact", path: "/contact" }
-            ].map(({ name, path }) => (
-              <li key={name}>
-                <button
-                  onClick={() => handleNavigation(path)}
-                  className="text-white text-lg font-semibold relative group"
+      <header className="sticky top-0 z-50 w-full">
+        {/* Top Bar */}
+        <div className="hidden bg-charcoal text-xs text-white md:block">
+          <div className="container-x flex h-9 items-center justify-between">
+            <div className="flex items-center gap-4">
+              {socials.map(({ icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="transition hover:text-brand"
                 >
-                  {name}
-                  <span className="absolute left-0 -bottom-1 w-0 h-1 bg-white transition-all duration-300 group-hover:w-full"></span>
-                </button>
-              </li>
-            ))}
-          </ul>
+                  {icon}
+                </a>
+              ))}
+            </div>
+            <div className="flex items-center gap-6">
+              <a href="tel:+233244173068" className="flex items-center gap-2 transition hover:text-brand">
+                <FaPhoneAlt className="text-brand" /> +233 24 417 3068
+              </a>
+              <a href="mailto:felixatoma2@gmail.com" className="flex items-center gap-2 transition hover:text-brand">
+                <FaEnvelope className="text-brand" /> felixatoma2@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
 
-          {/* Let's Talk Button */}
-          <button
-            onClick={() => handleNavigation("/contact")}
-            className="hidden md:block text-white bg-orange-500 px-4 py-1.5 rounded-lg font-semibold border-2 border-white transition-all hover:bg-orange-600"
-          >
-            Let's Talk
-          </button>
+        {/* Main Nav */}
+        <div className="border-b border-divider bg-white">
+          <nav className="container-x flex h-16 items-center justify-between md:h-20">
+            {/* Logo */}
+            <button onClick={() => handleNavigation("/")} className="flex items-center gap-3">
+              <img src="/logo.png" alt="Felixio Logo" className="h-10 w-10 rounded-full object-cover" />
+              <span className="text-xl font-bold text-charcoal">Felixio</span>
+            </button>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white text-2xl z-50"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <FiX /> : <FiMenu />}
-          </button>
-        </nav>
+            {/* Navigation Links */}
+            <ul
+              className={`${
+                isOpen ? "flex" : "hidden"
+              } absolute left-0 top-full w-full flex-col border-b border-divider bg-white px-4 py-4 md:static md:flex md:w-auto md:flex-row md:items-center md:gap-8 md:border-0 md:p-0`}
+            >
+              {links.map(({ name, path }) => (
+                <li key={name}>
+                  <button
+                    onClick={() => handleNavigation(path)}
+                    className={`w-full py-3 text-left text-xs font-medium uppercase tracking-[0.15em] transition hover:text-brand-deep md:w-auto md:py-0 ${
+                      pathname === path ? "text-brand-deep" : "text-muted"
+                    }`}
+                  >
+                    {name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+            {/* Let's Talk Button */}
+            <button onClick={() => handleNavigation("/contact")} className="btn-brand hidden md:inline-flex">
+              Let's Talk
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="text-2xl text-charcoal md:hidden"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <FiX /> : <FiMenu />}
+            </button>
+          </nav>
+        </div>
       </header>
     </>
   );

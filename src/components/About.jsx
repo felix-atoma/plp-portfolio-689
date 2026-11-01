@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 const skills = [
   { name: "React.js", percentage: 90 },
@@ -18,34 +20,47 @@ const skills = [
 
 const AboutMe = () => {
   return (
-    <section id="about-me" className="bg-gray-50 py-16 px-6 md:px-20">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 md:gap-20 items-center">
-        <div className="md:w-1/2 space-y-6">
-          <h2 className="text-4xl font-bold text-gray-800 border-l-4 border-orange-600 pl-3">
-            About Me
-          </h2>
-          <p className="text-gray-600 text-lg">
-            I'm a passionate software engineer with a strong focus on frontend engineering. 
+    <section id="about-me" className="bg-white py-20 md:py-28">
+      <div className="container-x grid items-start gap-12 md:grid-cols-2 md:gap-20">
+        <div>
+          <p className="eyebrow">About me</p>
+          <h2 className="section-title">One engineer, sketch to production</h2>
+          <p className="mt-6 text-base leading-relaxed text-muted">
+            I'm a passionate software engineer with a strong focus on frontend engineering.
             I specialize in building intuitive, accessible, and visually appealing web and mobile applications.
           </p>
-          <p className="text-gray-600 text-lg">
+          <p className="mt-4 text-base leading-relaxed text-muted">
             With expertise in modern JavaScript frameworks, I aim to create seamless and high-performance user experiences.
           </p>
+          <a
+            href="/Felix Atoma (3).pdf"
+            download
+            className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-charcoal transition hover:text-brand-deep"
+          >
+            Download my CV <FaArrowRight className="text-brand" />
+          </a>
+          <Link
+            to="/contact"
+            className="ml-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-charcoal transition hover:text-brand-deep"
+          >
+            Get in touch <FaArrowRight className="text-brand" />
+          </Link>
         </div>
 
-        <div className="md:w-1/2 grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
           {skills.map((skill, index) => (
             <div key={index}>
-              <div className="flex justify-between items-center mb-1">
-                <span className="text-gray-700 font-semibold">{skill.name}</span>
-                <span className="text-gray-700 font-semibold">{skill.percentage}%</span>
+              <div className="mb-2 flex items-center justify-between text-sm">
+                <span className="font-semibold text-charcoal">{skill.name}</span>
+                <span className="font-display text-brand-deep">{skill.percentage}%</span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-3">
+              <div className="h-1.5 w-full bg-divider">
                 <motion.div
                   initial={{ width: 0 }}
-                  animate={{ width: `${skill.percentage}%` }}
+                  whileInView={{ width: `${skill.percentage}%` }}
+                  viewport={{ once: true }}
                   transition={{ duration: 1 }}
-                  className="h-3 bg-gradient-to-r from-orange-500 to-orange-700 rounded-full"
+                  className="h-1.5 bg-brand"
                 />
               </div>
             </div>

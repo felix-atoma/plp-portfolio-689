@@ -22,39 +22,51 @@ const project = {
 
 const MyWorks = () => {
   return (
-    <section id="my-works" className="text-center py-16 bg-orange-100 px-4">
-      <h2 className="text-4xl font-bold text-orange-600 mb-8">My Works</h2>
+    <section id="my-works" className="bg-surface py-20 md:py-28">
+      <div className="container-x">
+        <div className="max-w-2xl">
+          <p className="eyebrow">Featured project</p>
+          <h2 className="section-title">Latest finished work</h2>
+        </div>
 
-      {/* Featured Project */}
-      <a
-        href={project.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block max-w-4xl mx-auto overflow-hidden rounded-lg shadow-lg group bg-white transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
-      >
-        <div className="overflow-hidden">
-          <img
-            src={project.img}
-            alt={`${project.title} preview`}
-            className="w-full object-cover transition duration-300 transform group-hover:scale-105"
-          />
+        {/* Featured Project */}
+        <div className="mt-12 grid overflow-hidden bg-white shadow-sm lg:grid-cols-2">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex items-end overflow-hidden bg-[#002347]"
+          >
+            <img
+              src={project.img}
+              alt={`${project.title} preview`}
+              className="w-full transition duration-500 group-hover:scale-105"
+            />
+            <span className="absolute left-0 top-0 bg-brand px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-charcoal">
+              Edtech · SaaS
+            </span>
+          </a>
+
+          <div className="flex flex-col p-8 md:p-12">
+            <h3 className="text-3xl font-bold text-charcoal">{project.title}</h3>
+            <p className="mt-2 text-sm font-semibold text-brand-deep">{project.tagline}</p>
+            <p className="mt-5 text-base leading-relaxed text-muted">{project.description}</p>
+            <ul className="mt-6 grid grid-cols-1 gap-x-6 gap-y-2 text-sm text-charcoal sm:grid-cols-2">
+              {project.features.map((feature) => (
+                <li key={feature} className="flex items-start gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-brand" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-auto pt-8">
+              <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn-brand">
+                View live project <FaExternalLinkAlt />
+              </a>
+            </div>
+          </div>
         </div>
-        <div className="p-8">
-          <h3 className="text-3xl font-bold text-gray-900 mb-2">{project.title}</h3>
-          <p className="text-orange-500 font-semibold mb-4">{project.tagline}</p>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">{project.description}</p>
-          <ul className="flex flex-wrap justify-center gap-2 mb-8">
-            {project.features.map((feature) => (
-              <li key={feature} className="bg-orange-100 text-gray-800 text-sm px-3 py-1 rounded-full">
-                {feature}
-              </li>
-            ))}
-          </ul>
-          <span className="inline-flex items-center gap-2 px-6 py-3 text-white bg-[#F7931E] group-hover:bg-[#e07e12] font-semibold text-lg rounded-full transition duration-300 shadow-lg">
-            View Live Project <FaExternalLinkAlt className="text-sm" />
-          </span>
-        </div>
-      </a>
+      </div>
     </section>
   );
 };

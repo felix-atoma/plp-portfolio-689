@@ -8,7 +8,7 @@ const PageLoader = () => {
             alt="Logo"
             className="w-20 h-20 rounded-full object-cover absolute top-4 left-4 z-10"
           />
-          <div className="absolute inset-0 animate-spin border-4 border-orange-400 border-t-transparent rounded-full"></div>
+          <div className="absolute inset-0 animate-spin border-4 border-brand border-t-transparent rounded-full"></div>
         </div>
       </div>
     );

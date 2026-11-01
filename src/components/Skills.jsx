@@ -30,28 +30,32 @@ const Skills = () => {
   ];
 
   return (
-    <section id="expertise" className="text-center py-16 bg-white">
-      <h2 className="text-4xl font-bold text-orange-500 mb-10">What I Do Best</h2>
+    <section id="expertise" className="bg-surface py-20 md:py-28">
+      <div className="container-x">
+        <div className="max-w-2xl">
+          <p className="eyebrow">What I do</p>
+          <h2 className="section-title">From idea to shipped product</h2>
+        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">
-        {expertiseData.map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            whileHover={{ scale: 1.05 }}
-            className="bg-orange-100 p-8 rounded-lg shadow-md text-center transform transition duration-300 hover:-translate-y-2 hover:bg-orange-200"
-          >
-            <div className="w-16 h-16 bg-orange-500 text-white flex items-center justify-center rounded-full mx-auto mb-4 text-3xl">
-              {item.icon}
-            </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
-            <p className="text-gray-600 mb-2">{item.description}</p>
-            <span className="text-orange-500 font-bold">{item.position}</span>
-          </motion.div>
-        ))}
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {expertiseData.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group flex flex-col border-t-4 border-brand bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+            >
+              <div className="mb-6 text-3xl text-brand-deep transition group-hover:text-brand">{item.icon}</div>
+              <h3 className="mb-3 text-lg font-bold text-charcoal">{item.title}</h3>
+              <p className="mb-6 text-sm leading-relaxed text-muted">{item.description}</p>
+              <span className="mt-auto border-t border-divider pt-4 text-xs font-semibold uppercase tracking-wider text-brand-deep">
+                {item.position}
+              </span>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

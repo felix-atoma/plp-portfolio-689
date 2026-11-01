@@ -3,7 +3,7 @@ import notFoundImage from "/404.webp";
 
 const NotFound = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6 text-center">
+    <div className="flex flex-col items-center justify-center min-h-[70vh] bg-surface p-6 text-center">
       <motion.img
         src={notFoundImage}
         alt="404 Not Found"
@@ -13,7 +13,7 @@ const NotFound = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       />
       <motion.h1
-        className="text-4xl font-bold text-red-600 mt-6"
+        className="text-4xl font-bold text-charcoal mt-6"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
@@ -21,7 +21,7 @@ const NotFound = () => {
         404 - Page Not Found
       </motion.h1>
       <motion.p
-        className="text-lg text-gray-600 mt-2"
+        className="text-lg text-muted mt-2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
@@ -30,7 +30,7 @@ const NotFound = () => {
       </motion.p>
       <motion.a
         href="/"
-        className="mt-6 px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-600 transition duration-300"
+        className="btn-brand mt-8"
         whileHover={{ scale: 1.1 }}
       >
         Go Home
